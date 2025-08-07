@@ -2,16 +2,16 @@ import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import Navbar from "../components/Navbar";
 import FooterCommon from "../components/FooterCommon";
-import CustomCarousel from "../components/Carousel";
+import CustomCarousel from "../components/carousel";
 
 
 
-import carousel0 from "../assets/Carousel0.jpg";
-import carousel1 from "../assets/Carousel1.jpg";
-import carousel2 from "../assets/Carousel2.jpg";
-import carousel3 from "../assets/Carousel3.jpg";
-import carousel4 from "../assets/Carousel4.jpg";
-import carousel5 from "../assets/Carousel5.jpg";
+import carousel0 from "../assets/carousel0.jpg";
+import carousel1 from "../assets/carousel1.jpg";
+import carousel2 from "../assets/carousel2.jpg";
+import carousel3 from "../assets/carousel3.jpg";
+import carousel4 from "../assets/carousel4.jpg";
+import carousel5 from "../assets/carousel5.jpg";
 
 export const carouselData = [
   {

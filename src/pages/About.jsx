@@ -3,15 +3,15 @@ import { motion } from "framer-motion";
 import { FaAward, FaMedal, FaClipboardList } from "react-icons/fa";
 import Navbar from "../components/Navbar";
 import FooterCommon from "../components/FooterCommon";
-import CustomCarousel from "../components/Carousel";
+import CustomCarousel from "../components/carousel";
 import PentagonValues from "../components/PentagonValues";
 import ArcValues from "../components/ArcValues";
 
 // Use same image for content + signature (temporarily)
-import carousel0 from "../assets/Carousel0.jpg";
-import carousel1 from "../assets/Carousel1.jpg";
-import carousel2 from "../assets/Carousel2.jpg";
-import carousel3 from "../assets/Carousel3.jpg";
+import carousel0 from "../assets/carousel0.jpg";
+import carousel1 from "../assets/carousel1.jpg";
+import carousel2 from "../assets/carousel2.jpg";
+import carousel3 from "../assets/carousel3.jpg";
 import carousel5 from "../assets/physio.jpg";
 
 import teamImage from "../assets/team.jpg"; // Replace with real team image

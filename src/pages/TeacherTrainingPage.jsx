@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import FooterCommon from '../components/FooterCommon';
-import CustomCarousel from '../components/Carousel';
+import CustomCarousel from '../components/carousel';
 import TherapyInfoSection from '../components/TherapyInfoCard';
 const teacherTrainingContent = {
   imageSrc:[teacher1,teacher2],
@@ -56,17 +56,17 @@ const services = [
 ];
 
 
-import carousel0 from "../assets/Carousel0.jpg";
-import carousel1 from "../assets/Carousel1.jpg";
-import carousel2 from "../assets/Carousel2.jpg";
-import carousel3 from "../assets/Carousel3.jpg";
-import carousel4 from "../assets/Carousel4.jpg";
-import carousel5 from "../assets/Carousel5.jpg";
+import carousel0 from "../assets/carousel0.jpg";
+import carousel1 from "../assets/carousel1.jpg";
+import carousel2 from "../assets/carousel2.jpg";
+import carousel3 from "../assets/carousel3.jpg";
+import carousel4 from "../assets/carousel4.jpg";
+import carousel5 from "../assets/carousel5.jpg";
 
 
-import teacher1 from "../assets/Teacher1.jpg";
+import teacher1 from "../assets/teacher1.jpg";
 
-import teacher2 from "../assets/Teacher2.jpg";
+import teacher2 from "../assets/teacher2.jpg";
 
 
 const carouselData = [

@@ -50,7 +50,7 @@ const CustomCarousel = ({ slides }) => {
             </motion.div>
           </div>
         ))}
-      </Carousel>
+      </carousel>
     </div>
   );
 };
