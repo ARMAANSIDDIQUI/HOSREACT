@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import sharedImage from "../images/121178.jpg"; // Replace with actual ADL image if available
+
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import FooterCommon from '../components/FooterCommon';

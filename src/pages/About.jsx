@@ -97,7 +97,7 @@ const About = () => {
         <div className="flex justify-center gap-10 mb-12 text-purple-700 text-center text-md font-medium cursor-pointer">
           <div onClick={() => scrollToSection(visionRef)} className="flex flex-col items-center text-md hover:text-purple-900">
             <FaAward size={64} />
-            <span class>vision</span>
+            <span >vision</span>
           </div>
           <div onClick={() => scrollToSection(missionRef)} className="flex flex-col items-center hover:text-purple-900">
             <FaMedal size={64} />

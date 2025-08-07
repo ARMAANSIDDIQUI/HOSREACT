@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import sharedImage from "../images/121178.jpg";
+
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import FooterCommon from '../components/FooterCommon';
@@ -61,7 +61,7 @@ import carousel1 from "../images/Carousel1.jpg";
 import carousel2 from "../images/Carousel2.jpg";
 import carousel3 from "../images/Carousel3.jpg";
 import carousel4 from "../images/Carousel4.jpg";
-import carousel5 from "../images/carousel5.jpg";
+import carousel5 from "../images/Carousel5.jpg";
 
 
 import yoga1 from "../images/yoga1.jpg";

@@ -75,13 +75,13 @@ const Navbar = () => {
           <a href="/archive" className="block hover:text-gray-300" onClick={toggleMenu}>
             Archive
           </a>
-          <a href="#" className="block hover:text-gray-300" onClick={toggleMenu}>
+          <a href="services" className="block hover:text-gray-300" onClick={toggleMenu}>
             Services
           </a>
-          <a href="#" className="block hover:text-gray-300" onClick={toggleMenu}>
+          <a href="careers" className="block hover:text-gray-300" onClick={toggleMenu}>
             Careers
           </a>
-          <a href="#" className="block hover:text-gray-300" onClick={toggleMenu}>
+          <a href="contact" className="block hover:text-gray-300" onClick={toggleMenu}>
             Contact
           </a>
         </div>

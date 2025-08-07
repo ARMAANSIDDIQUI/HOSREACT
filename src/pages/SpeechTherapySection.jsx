@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import sharedImage from "../images/121178.jpg"; // Replace with actual image
+// Replace with actual image
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import FooterCommon from '../components/FooterCommon';
@@ -60,7 +60,7 @@ import carousel1 from "../images/Carousel1.jpg";
 import carousel2 from "../images/Carousel2.jpg";
 import carousel3 from "../images/Carousel3.jpg";
 import carousel4 from "../images/Carousel4.jpg";
-import carousel5 from "../images/carousel5.jpg";
+import carousel5 from "../images/Carousel5.jpg";
 
 
 import speech1 from "../images/sensory.jpg";
@@ -68,19 +68,19 @@ import speech1 from "../images/sensory.jpg";
 
 const carouselData = [
   {
-    image: sharedImage,
+    image: carousel2,
     heading: "Speech Therapy at House of Specials",
     text: "Empowering individuals to communicate with clarity and confidence.",
     url: "/about",
   },
   {
-    image: sharedImage,
+    image: carousel1,
     heading: "Your Voice Matters",
     text: "We help you find it and amplify it with expert guidance.",
     url: "/contact",
   },
   {
-    image: sharedImage,
+    image: carousel5,
     heading: "Integrated Care Approach",
     text: "Collaborative therapy for holistic communication development.",
     url: "/services",

@@ -4,7 +4,7 @@ import { FaComments, FaUserNurse, FaRunning } from "react-icons/fa";
 import Navbar from "../components/Navbar";
 import FooterCommon from "../components/FooterCommon";
 import CustomCarousel from "../components/Carousel";
-import sharedImage from "../images/121178.jpg";
+
 
 import carousel0 from "../images/Carousel0.jpg";
 import carousel1 from "../images/Carousel1.jpg";
