@@ -37,6 +37,7 @@ function App() {
     <Route path="/careers" element={<Careers />} />
 
     {/* Therapy & Program Pages */}
+    
     <Route path="/autism-therapy" element={<AutismPage />} />
     <Route path="/psychological-counselling" element={<PsychologicalCouncellingPage />} />
     <Route path="/occupational-therapy" element={<OccupationalTherapyPage />} />
