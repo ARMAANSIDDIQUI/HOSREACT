@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.clip-fancy {
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 75% 100%, 0 100%);
+}
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 6s linear infinite;
+}
+
+/* index.css or styles.css */
+.slanted-card {
+  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 90%);
+  background: linear-gradient(to right, #8e2de2, #4a00e0); /* Optional purple gradient */
+  color: white;
+  padding: 2rem;
+  max-width: 400px;
+  position: relative;
+  z-index: 1;
+}
