@@ -8,13 +8,13 @@ import PentagonValues from "../components/PentagonValues";
 import ArcValues from "../components/ArcValues";
 
 // Use same image for content + signature (temporarily)
-import carousel0 from "../images/Carousel0.jpg";
-import carousel1 from "../images/Carousel1.jpg";
-import carousel2 from "../images/Carousel2.jpg";
-import carousel3 from "../images/Carousel3.jpg";
-import carousel5 from "../images/physio.jpg";
+import carousel0 from "../assets/Carousel0.jpg";
+import carousel1 from "../assets/Carousel1.jpg";
+import carousel2 from "../assets/Carousel2.jpg";
+import carousel3 from "../assets/Carousel3.jpg";
+import carousel5 from "../assets/physio.jpg";
 
-import teamImage from "../images/team.jpg"; // Replace with real team image
+import teamImage from "../assets/team.jpg"; // Replace with real team image
 
 export const carouselData = [
   {

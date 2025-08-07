@@ -56,17 +56,17 @@ const services = [
   { icon: <FaHome />, label: 'Daycare Facility', path: '/daycare' }
 ];
 
-import carousel0 from "../images/Carousel0.jpg";
-import carousel1 from "../images/Carousel1.jpg";
-import carousel2 from "../images/Carousel2.jpg";
-import carousel3 from "../images/Carousel3.jpg";
-import carousel4 from "../images/Carousel4.jpg";
-import carousel5 from "../images/Carousel5.jpg";
+import carousel0 from "../assets/Carousel0.jpg";
+import carousel1 from "../assets/Carousel1.jpg";
+import carousel2 from "../assets/Carousel2.jpg";
+import carousel3 from "../assets/Carousel3.jpg";
+import carousel4 from "../assets/Carousel4.jpg";
+import carousel5 from "../assets/Carousel5.jpg";
 
 
-import social1 from "../images/social.jpg";
+import social1 from "../assets/social.jpg";
 
-import social2 from "../images/adl.jpg";
+import social2 from "../assets/adl.jpg";
 
 const carouselData = [
   {

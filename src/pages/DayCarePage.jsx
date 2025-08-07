@@ -61,15 +61,15 @@ const services = [
 ];
 
 
-import carousel0 from "../images/Carousel0.jpg";
-import carousel1 from "../images/Carousel1.jpg";
-import carousel2 from "../images/Carousel2.jpg";
-import carousel3 from "../images/Carousel3.jpg";
-import carousel4 from "../images/Carousel4.jpg";
-import carousel5 from "../images/Carousel5.jpg";
+import carousel0 from "../assets/Carousel0.jpg";
+import carousel1 from "../assets/Carousel1.jpg";
+import carousel2 from "../assets/Carousel2.jpg";
+import carousel3 from "../assets/Carousel3.jpg";
+import carousel4 from "../assets/Carousel4.jpg";
+import carousel5 from "../assets/Carousel5.jpg";
 
-import day1 from "../images/daycare1.jpg";
-import day2 from "../images/daycare2.jpg";
+import day1 from "../assets/daycare1.jpg";
+import day2 from "../assets/daycare2.jpg";
 
 export const carouselData = [
   {
