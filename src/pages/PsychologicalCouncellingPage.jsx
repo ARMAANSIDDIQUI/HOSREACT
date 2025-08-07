@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import FooterMain from '../components/FooterMain';
-import CustomCarousel from '../components/carousel';
+import CustomCarousel from '../components/Carousel';
 import TherapyInfoSection from '../components/TherapyInfoCard';
 
 const psychologicalCounsellingContent = {

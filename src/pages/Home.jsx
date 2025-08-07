@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import FooterMain from '../components/FooterMain';
-import CustomCarousel from '../components/carousel';
+import CustomCarousel from '../components/Carousel';
 
 // const tags = [
 //   "Speech & language therapy", "Speech therapy for kids", "Speech therapist for kids near me", "speech therapy centers",

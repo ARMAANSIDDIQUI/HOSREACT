@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import Navbar from "../components/Navbar";
 import FooterCommon from "../components/FooterCommon";
-import CustomCarousel from "../components/carousel";
+import CustomCarousel from "../components/Carousel";
 
 
 

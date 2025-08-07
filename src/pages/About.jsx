@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { FaAward, FaMedal, FaClipboardList } from "react-icons/fa";
 import Navbar from "../components/Navbar";
 import FooterCommon from "../components/FooterCommon";
-import CustomCarousel from "../components/carousel";
+import CustomCarousel from "../components/Carousel";
 import PentagonValues from "../components/PentagonValues";
 import ArcValues from "../components/ArcValues";
 

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import FooterCommon from '../components/FooterCommon';
-import CustomCarousel from '../components/carousel';
+import CustomCarousel from '../components/Carousel';
 import TherapyInfoSection from '../components/TherapyInfoCard';
 
 

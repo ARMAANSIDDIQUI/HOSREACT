@@ -3,7 +3,7 @@ import emailjs from "@emailjs/browser";
 import { FaComments, FaUserNurse, FaRunning } from "react-icons/fa";
 import Navbar from "../components/Navbar";
 import FooterCommon from "../components/FooterCommon";
-import CustomCarousel from "../components/carousel";
+import CustomCarousel from "../components/Carousel";
 
 
 import carousel0 from "../assets/carousel0.jpg";
