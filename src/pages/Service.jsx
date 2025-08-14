@@ -38,7 +38,7 @@ import carousel2 from "../assets/carousel2.jpg";
 import carousel3 from "../assets/carousel3.jpg";
 import carousel4 from "../assets/carousel4.jpg";
 import carousel5 from "../assets/carousel5.jpg";
-
+import emailjs from "emailjs-com";
 
 export const carouselData = [
   {
@@ -93,24 +93,44 @@ export default function Services() {
     return Object.keys(newErrors).length === 0;
   };
 
-
   const handleEnquirySubmit = (e) => {
     e.preventDefault();
-    if (!validateEnquiryForm()) return;
 
-    // Here you can do API/emailjs/post logic
-    console.log("Form submitted", enquiryData);
+    if (!validateEnquiryForm()) return; // Validate before sending
 
-    // Optionally clear the form
-    setEnquiryData({
-      name: "",
-      email: "",
-      phone: "",
-      service: "",
-      message: "",
-    });
-    setErrors({});
+    const templateParams = {
+      title:"Enquiring for a Service",
+      name: enquiryData.name,
+      email: enquiryData.email,
+      phone: enquiryData.phone,
+      info: enquiryData.service || "", // Pass service as "info"
+      message: enquiryData.message,
+    };
+
+    emailjs
+      .send(
+        "service_zgjayp7",   // EmailJS service ID
+        "template_mpdml6w",  // EmailJS template ID
+        templateParams,
+        "jt611qJHQczheAlMV"  // EmailJS public key
+      )
+      .then(() => {
+        alert("Your enquiry has been sent successfully!");
+        setEnquiryData({
+          name: "",
+          email: "",
+          phone: "",
+          service: "",
+          message: "",
+        });
+      })
+      .catch((error) => {
+        console.error("Failed to send message:", error);
+        alert("Failed to send enquiry. Please try again later.");
+      });
   };
+
+
 
   return (
     <div className="bg-gradient-to-br from-purple-100 to-white">

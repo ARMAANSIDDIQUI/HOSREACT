@@ -4,8 +4,6 @@ import Navbar from "../components/Navbar";
 import FooterCommon from "../components/FooterCommon";
 import CustomCarousel from "../components/Carousel";
 
-
-
 import carousel0 from "../assets/carousel0.jpg";
 import carousel1 from "../assets/carousel1.jpg";
 import carousel2 from "../assets/carousel2.jpg";
@@ -40,7 +38,6 @@ export const carouselData = [
   },
 ];
 
-
 export default function Contact() {
   const form = useRef();
   const [formData, setFormData] = useState({
@@ -48,6 +45,7 @@ export default function Contact() {
     name: "",
     email: "",
     phone: "",
+    reason: "",
     message: "",
   });
   const [status, setStatus] = useState("");
@@ -59,35 +57,40 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Custom JS validation (optional)
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const phoneRegex = /^[0-9]{10}$/;
 
     if (!emailRegex.test(formData.email)) {
-      setStatus("Invalid email format.");
+      alert("Invalid email format.");
       return;
     }
     if (!phoneRegex.test(formData.phone)) {
-      setStatus("Phone must be 10 digits.");
+      alert("Phone must be 10 digits.");
       return;
     }
 
-    // Proceed to send form
     emailjs
       .sendForm(
-        "your_service_id",
-        "your_template_id",
+        "service_zgjayp7", // Your service ID
+        "template_qp3dj0s", // Your template ID
         form.current,
-        "your_public_key"
+        "jt611qJHQczheAlMV" // Your EmailJS public key
       )
       .then(
         () => {
-          setStatus("Message sent successfully!");
-          setFormData({ title: "", name: "", email: "", phone: "", message: "" });
+          alert("Message sent successfully!");
+          setFormData({
+            title: "",
+            name: "",
+            email: "",
+            phone: "",
+            reason: "",
+            message: "",
+          });
         },
         (error) => {
           console.error("EmailJS Error:", error);
-          setStatus("Failed to send message. Please try again.");
+          alert("Failed to send message. Please try again.");
         }
       );
   };
@@ -100,20 +103,28 @@ export default function Contact() {
 
       <div className="px-4 py-12 max-w-4xl mx-auto text-center">
         <h2 className="text-3xl font-bold text-gray-800 mb-2">Contact Us</h2>
-        <h3 className="text-2xl font-semibold text-gray-700 mb-6">We're here to help</h3>
+        <h3 className="text-2xl font-semibold text-gray-700 mb-6">
+          We're here to help
+        </h3>
         <p className="text-xl font-bold text-black mb-6">📞 +91 89797 33393</p>
 
-        {status && (
+        {/* {status && (
           <div
             className={`mb-6 text-sm font-medium px-4 py-2 rounded ${
-              status.includes("successfully") ? "bg-green-100 text-green-700" : "bg-red-100 text-red-700"
+              status.includes("✅")
+                ? "bg-green-100 text-green-700"
+                : "bg-red-100 text-red-700"
             }`}
           >
             {status}
           </div>
-        )}
+        )} */}
 
-        <form ref={form} onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+        <form
+          ref={form}
+          onSubmit={handleSubmit}
+          className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left"
+        >
           <div>
             <label className="block mb-1 font-medium">Title</label>
             <select
@@ -168,6 +179,18 @@ export default function Contact() {
           </div>
 
           <div className="md:col-span-2">
+            <label className="block mb-1 font-medium">Reason for Contact</label>
+            <input
+              type="text"
+              name="reason"
+              value={formData.reason}
+              onChange={handleChange}
+              className="w-full border border-gray-300 rounded px-3 py-2"
+              required
+            />
+          </div>
+
+          <div className="md:col-span-2">
             <label className="block mb-1 font-medium">Message</label>
             <textarea
               name="message"
@@ -190,10 +213,9 @@ export default function Contact() {
         </form>
       </div>
 
-      {/* Embedded Google Map */}
       <div className="w-full">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d55916.689734429354!2d78.757765!3d28.845018999999997!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDUwJzQyLjEiTiA3OMKwNDUnMjguMCJF!5e0!3m2!1sen!2us!4v1754055410586!5m2!1sen!2sus"
+          src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d55916.689734429354!2d78.757765!3d28.845019!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDUwJzQyLjEiTiA3OMKwNDUnMjguMCJF!5e0!3m2!1sen!2in!4v1754055410586!5m2!1sen!2in"
           width="100%"
           height="450"
           style={{ border: 0 }}

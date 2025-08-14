@@ -8,7 +8,7 @@ import TherapyInfoSection from '../components/TherapyInfoCard';
 
 // 👣 Dance therapy content
 const danceTherapyContent = {
-  imageSrc:[dance],
+  // imageSrc:[dance],
   imageAlt: "Dance Therapy Image",
   title: "Dance Therapy at House of Specials",
   subtitle: "Movement is a powerful way to express emotions and foster connection.",
@@ -64,7 +64,7 @@ const services = [
   { icon: <FaHome />, label: 'Daycare Facility', path: '/daycare' }
 ];
 
-// 🎠 Carousel content (reuse or replace with dance-specific slides)
+//Carousel content (reuse or replace with dance-specific slides)
 export const carouselData = [
   {
     image: carousel5,
@@ -93,7 +93,7 @@ export const carouselData = [
 ];
 
 
-// 🧩 Final component
+//Final component
 export default function DanceTherapyPage() {
   return (
     <div className="bg-gradient-to-br from-purple-100 to-white">

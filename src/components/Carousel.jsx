@@ -23,7 +23,7 @@ const CustomCarousel = ({ slides }) => {
             <img
               src={slide.image}
               alt={`Slide ${index + 1}`}
-              className="w-full h-[300px] md:h-[400px] object-cover"
+              className="w-full h-[400px] md:h-[500px] object-cover"
             />
 
             {/* Animated Text Overlay */}
@@ -31,8 +31,11 @@ const CustomCarousel = ({ slides }) => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
-              className="absolute inset-0 flex items-center justify-end pr-4 md:pr-12"
-            >
+              className="
+                absolute inset-x-0 bottom-4 flex justify-center
+                md:top-0 md:bottom-0 md:right-8 md:left-auto md:justify-end md:items-center
+              ">
+
               <div className="bg-purple-600 bg-opacity-90 text-white p-4 md:p-6 rounded-xl shadow-lg max-w-[90%] sm:max-w-[400px]">
                 <h2 className="text-lg sm:text-2xl font-bold mb-2">{slide.heading}</h2>
                 <p className="text-sm sm:text-base mb-3">{slide.text}</p>
@@ -50,7 +53,7 @@ const CustomCarousel = ({ slides }) => {
             </motion.div>
           </div>
         ))}
-      </carousel>
+      </Carousel>
     </div>
   );
 };

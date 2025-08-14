@@ -1,10 +1,9 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { FaComments, FaUserNurse, FaRunning } from "react-icons/fa";
+import { FaComments, FaUserNurse, FaRunning, FaBookOpen } from "react-icons/fa";
 import Navbar from "../components/Navbar";
 import FooterCommon from "../components/FooterCommon";
 import CustomCarousel from "../components/Carousel";
-
 
 import carousel0 from "../assets/carousel0.jpg";
 import carousel1 from "../assets/carousel1.jpg";
@@ -40,19 +39,9 @@ export const carouselData = [
   },
 ];
 
-
 export default function Careers() {
   const form = useRef();
-  const [fileBase64, setFileBase64] = useState("");
   const [formErrors, setFormErrors] = useState({});
-
-  const convertToBase64 = (file) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => setFileBase64(reader.result);
-    reader.onerror = (err) => console.error("File Error: ", err);
-  };
-
 
   const validateForm = () => {
     const errors = {};
@@ -67,23 +56,18 @@ export default function Careers() {
     if (!name || name.length < 2) {
       errors.user_name = "Name must be at least 2 characters.";
     }
-
     if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
       errors.user_email = "Please enter a valid email.";
     }
-
     if (!phone || !/^\d{10}$/.test(phone)) {
       errors.user_phone = "Phone must be a 10-digit number.";
     }
-
     if (!position) {
       errors.position = "Please specify a position.";
     }
-
     if (!message) {
       errors.message = "Please tell us why you want to join.";
     }
-
     setFormErrors(errors);
     return Object.keys(errors).length === 0;
   };
@@ -92,22 +76,30 @@ export default function Careers() {
     e.preventDefault();
     if (!validateForm()) return;
 
+    const formData = new FormData(form.current);
+
     emailjs
-      .sendForm(
-        "your_service_id",
-        "your_template_id",
-        form.current,
-        "your_public_key"
+      .send(
+        "service_zgjayp7", // your EmailJS service ID
+        "template_mpdml6w", // your EmailJS template ID
+        {
+          title: "Job Application", // matches {{reason}} in your template
+          name: formData.get("user_name"),
+          phone: formData.get("user_phone"),
+          email: formData.get("user_email"),
+          info: formData.get("position"),
+          message: formData.get("message"),
+        },
+        "jt611qJHQczheAlMV"
       )
       .then(
-        (result) => {
+        () => {
           alert("Application sent successfully!");
           form.current.reset();
-          setFileBase64("");
           setFormErrors({});
         },
-        (error) => {
-          alert("Failed to send application.");
+        () => {
+          alert("Failed to send application. Please try again.");
         }
       );
   };
@@ -118,24 +110,9 @@ export default function Careers() {
       <Navbar />
       <CustomCarousel slides={carouselData} />
 
-      {/* Pink Banner */}
-      {/* <div className="bg-pink-600 text-white text-sm py-3 px-4 shadow">
-        <div className="flex flex-wrap justify-between items-center max-w-7xl mx-auto">
-          <h2 className="text-xl font-bold mr-4">I'm here to</h2>
-          <div className="flex flex-wrap gap-4">
-            <a href="/assessment" className="hover:underline">Take Assessment</a>
-            <a href="/enroll" className="hover:underline">Enroll My Kid</a>
-            <a href="/pay" className="hover:underline">Pay Online</a>
-            <a href="/courses" className="hover:underline">Join Certified Course</a>
-            <a href="/franchise" className="hover:underline">Apply Franchise</a>
-            <a href="/resources" className="hover:underline">Download Resources</a>
-          </div>
-        </div>
-      </div> */}
-
       {/* Icons for Roles */}
-      <div className=" py-12">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+      <div className="py-12">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-4 gap-6 text-center">
           <div className="flex flex-col items-center">
             <FaComments className="text-5xl text-pink-600 mb-3" />
             <p className="text-lg font-semibold">Speech Therapist</p>
@@ -148,16 +125,19 @@ export default function Careers() {
             <FaRunning className="text-5xl text-pink-600 mb-3" />
             <p className="text-lg font-semibold">Physiotherapist</p>
           </div>
+          <div className="flex flex-col items-center">
+            <FaBookOpen className="text-5xl text-pink-600 mb-3" />
+            <p className="text-lg font-semibold">Special Educator</p>
+          </div>
         </div>
       </div>
 
-      {/* Combined Job Info Section */}
+      {/* Job Info Section */}
       <div className="max-w-4xl mx-auto px-6 py-10 space-y-6 text-gray-800">
         <h2 className="text-3xl font-bold text-pink-700 text-center">We're Hiring!</h2>
         <p className="text-lg text-center">
           Join us as a <strong>Speech Therapist</strong>, <strong>Occupational Therapist</strong>, or <strong>Physiotherapist</strong> at House of Specials.
         </p>
-
         <div className="space-y-3">
           <h3 className="text-xl font-semibold text-pink-700">Requirements</h3>
           <ul className="list-disc list-inside space-y-1">
@@ -168,7 +148,6 @@ export default function Careers() {
             <li>Strong communication and interpersonal skills</li>
           </ul>
         </div>
-
         <div className="space-y-3">
           <h3 className="text-xl font-semibold text-pink-700">Key Responsibilities</h3>
           <ul className="list-disc list-inside space-y-1">
@@ -178,7 +157,6 @@ export default function Careers() {
             <li>Collaborate with a multidisciplinary team</li>
           </ul>
         </div>
-
         <div className="space-y-1">
           <h3 className="text-xl font-semibold text-pink-700">Organisation Details</h3>
           <p>
@@ -186,7 +164,6 @@ export default function Careers() {
             occupational therapy, speech therapy, and social skills training.
           </p>
         </div>
-
         <div className="space-y-1">
           <h3 className="text-xl font-semibold text-pink-700">Location</h3>
           <p>Dr. Ram Swarup Colony, Moradabad, UP.</p>
@@ -257,18 +234,6 @@ export default function Careers() {
             )}
           </div>
 
-          <div className="flex flex-col">
-            <label className="mb-2 font-medium text-gray-700">Upload Your Resume</label>
-            <input
-              type="file"
-              accept=".pdf,.doc,.docx"
-              onChange={(e) => convertToBase64(e.target.files[0])}
-              className="w-full border rounded px-4 bg-white py-2"
-            />
-          </div>
-
-          <input type="hidden" name="resume_base64" value={fileBase64} />
-
           <button
             type="submit"
             className="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded w-full"
@@ -276,8 +241,6 @@ export default function Careers() {
             Submit Application
           </button>
         </form>
-
-
       </div>
 
       <FooterCommon />

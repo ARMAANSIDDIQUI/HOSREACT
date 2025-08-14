@@ -173,7 +173,7 @@ const About = () => {
           >
             <center><h2 className="text-3xl font-bold pb-8 mb-4">OUR CORE VALUES</h2></center>
             <div className="flex-1 min-w-[350px] max-w-[500px]">
-              <PentagonValues />
+              {/* <PentagonValues /> */}
             </div>
             <div className="flex-1 min-w-[350px] max-w-[500px]">
               <ArcValues />
