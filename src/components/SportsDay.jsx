@@ -4,20 +4,20 @@ import { motion } from "framer-motion";
 
 // Import images manually
 import sportsDay0 from "../assets/sports_day/sports_day0.jpg";
-import sportsDay1 from "../assets/sports_day/sports_day1.jpg";
+
 import sportsDay2 from "../assets/sports_day/sports_day2.jpg";
-import sportsDay3 from "../assets/sports_day/sports_day3.jpg";
+
 import sportsDay4 from "../assets/sports_day/sports_day4.jpg";
-import sportsDay5 from "../assets/sports_day/sports_day5.jpg";
+
 
 const SportsDay = () => {
   const images = [
     sportsDay0,
-    sportsDay1,
+
     sportsDay2,
-    sportsDay3,
+
     sportsDay4,
-    sportsDay5,
+
   ];
 
   return (

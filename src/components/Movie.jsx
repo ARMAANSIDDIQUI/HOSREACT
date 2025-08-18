@@ -9,13 +9,11 @@ import movie2 from "../assets/movie/movie2.jpg";
 import movie3 from "../assets/movie/movie3.jpg";
 import movie4 from "../assets/movie/movie4.jpg";
 import movie5 from "../assets/movie/movie5.jpg";
-import movie6 from "../assets/movie/movie6.jpg";
-import movie7 from "../assets/movie/movie7.jpg";
 
 const Movie = () => {
   const images = [
     movie0, movie1, movie2, movie3,
-    movie4, movie5, movie6, movie7
+    movie4, movie5, 
   ];
 
   return (

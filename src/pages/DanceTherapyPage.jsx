@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar';
 import FooterCommon from '../components/FooterCommon';
 import CustomCarousel from '../components/Carousel';
 import TherapyInfoSection from '../components/TherapyInfoCard';
-
+import ColoredIcon from '../components/ColoredIcon';
 // 👣 Dance therapy content
 const danceTherapyContent = {
   // imageSrc:[dance],
@@ -106,51 +106,24 @@ export default function DanceTherapyPage() {
                 <center>
           <h1 className="text-2xl font-bold text-purple-700 mb-6">OUR OTHER SERVICES</h1>
         </center>
-<div className="flex flex-wrap justify-center gap-8 mb-16">
-  {services.map((service, index) => {
-    // Rainbow color palette
-    const colors = [
-      "text-red-500",
-      "text-orange-500",
-      "text-yellow-500",
-      "text-green-500",
-      "text-teal-500",
-      "text-blue-500",
-      "text-indigo-500",
-      "text-purple-500",
-      "text-pink-500",
-    ];
-    const color = colors[index % colors.length];
+        <div className="flex flex-wrap justify-center gap-8 text-purple-700 mb-16">
+          {services.map((service, index) => (
+            <Link
+              key={index}
+              to={service.path}
+              className="flex flex-col items-center group relative w-32"
+            >
+              {/* Use extracted component */}
+              <ColoredIcon icon={service.icon} index={index} />
 
-    return (
-      <Link
-        key={index}
-        to={service.path}
-        className="flex flex-col items-center w-32 group"
-      >
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          className="relative w-20 h-20 flex items-center justify-center bg-white rounded-full shadow-md transition-all"
-        >
-          {/* Rotating dotted border */}
-                            <div className="absolute inset-0 rounded-full p-[2px] animate-spin-slow"
-              style={{ background: "conic-gradient(red, yellow, green, cyan, blue, purple, red)" }}>
-
-
-          <div className="rounded-full h-full w-full bg-white"></div>
+              <span className="mt-2 text-sm font-medium text-gray-800 group-hover:underline text-center">
+                {service.label}
+              </span>
+            </Link>
+          ))}
         </div>
-          <div className={`relative z-10 text-3xl ${color}`}>
-            {service.icon}
-          </div>
-        </motion.div>
-        <span className="mt-3 text-sm font-medium text-gray-800 text-center group-hover:underline">
-          {service.label}
-        </span>
-      </Link>
-    );
-  })}
-</div>
+
+
 
       </div>
       <FooterCommon />

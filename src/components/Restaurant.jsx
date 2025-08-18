@@ -5,17 +5,15 @@ import { motion } from "framer-motion";
 // Import images manually
 import restaurant0 from "../assets/restaurant/restaurant0.jpg";
 import restaurant1 from "../assets/restaurant/restaurant1.jpg";
-import restaurant2 from "../assets/restaurant/restaurant2.jpg";
 import restaurant3 from "../assets/restaurant/restaurant3.jpg";
-import restaurant4 from "../assets/restaurant/restaurant4.jpg";
 import restaurant5 from "../assets/restaurant/restaurant5.jpg";
 import restaurant6 from "../assets/restaurant/restaurant6.jpg";
 import restaurant7 from "../assets/restaurant/restaurant7.jpg";
 
 const Restaurant = () => {
   const images = [
-    restaurant0, restaurant1, restaurant2, restaurant3,
-    restaurant4, restaurant5, restaurant6, restaurant7
+    restaurant0, restaurant1, restaurant3,
+     restaurant5, restaurant6, restaurant7
   ];
 
   return (

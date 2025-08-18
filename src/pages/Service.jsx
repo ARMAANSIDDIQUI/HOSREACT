@@ -11,7 +11,7 @@ import {
   FaHeartbeat, FaSun
 } from 'react-icons/fa';
 import { useState, useRef } from "react";
-
+import ColoredIcon from '../components/ColoredIcon';
 const services = [
   { icon: <FaChild />, label: 'Autism Therapy', path: '/autism-therapy' },
   { icon: <FaComments />, label: 'Speech Therapy', path: '/speech-therapy' },
@@ -140,38 +140,22 @@ export default function Services() {
       <div className="min-h-screen w-full bg-gradient-to-br from-purple-100 to-white px-4 py-8">
         {/* Services Icons */}
         <div className="flex flex-wrap justify-center gap-8 text-purple-700 mb-16">
-          {services.map((service, index) => {
-            const rainbowColors = [
-              "text-red-500", "text-orange-500", "text-yellow-500",
-              "text-green-500", "text-blue-500", "text-indigo-500",
-              "text-purple-500", "text-pink-500",
-            ];
-            const iconColor = rainbowColors[index % rainbowColors.length];
+          {services.map((service, index) => (
+            <Link
+              key={index}
+              to={service.path}
+              className="flex flex-col items-center group relative w-32"
+            >
+              {/* Use extracted component */}
+              <ColoredIcon icon={service.icon} index={index} />
 
-            return (
-              <Link
-                key={index}
-                to={service.path}
-                className="flex flex-col items-center group relative w-32"
-              >
-                <motion.div
-                  whileHover={{ scale: 1.2, rotate: 5 }}
-                  whileTap={{ scale: 0.9, rotate: -5 }}
-                  className="relative text-4xl bg-white p-5 rounded-full shadow-md transition-all"
-                >
-                  <div className="absolute inset-0 rounded-full p-[2px] animate-spin-slow"
-                    style={{ background: "conic-gradient(red, yellow, green, cyan, blue, purple, red)" }}>
-                    <div className="rounded-full h-full w-full bg-white"></div>
-                  </div>
-                  <div className={`relative z-10 ${iconColor}`}>{service.icon}</div>
-                </motion.div>
-                <span className="mt-2 text-sm font-medium text-gray-800 group-hover:underline text-center">
-                  {service.label}
-                </span>
-              </Link>
-            );
-          })}
+              <span className="mt-2 text-sm font-medium text-gray-800 group-hover:underline text-center">
+                {service.label}
+              </span>
+            </Link>
+          ))}
         </div>
+
 
         {/* Unified Service Overview Section */}
         <section className="px-4 md:px-10 py-12 text-gray-800">

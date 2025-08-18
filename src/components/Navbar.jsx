@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaGlobe } from "react-icons/fa";
 
+import logo from "../assets/logo.jpg";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -10,8 +11,13 @@ const Navbar = () => {
     <nav className="bg-[#111620] text-white">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
-        <div className="flex items-center gap-2">
-          <FaGlobe className="text-white text-xl" />
+       <div className="flex items-center gap-2">
+          <img
+            src={logo}
+            alt="House of Specials Logo"
+            className="h-10 w-14 rounded-2xl object-cover sm:h-16 sm:w-24"
+          />
+
           <span className="text-lg font-semibold">House Of Specials</span>
         </div>
 

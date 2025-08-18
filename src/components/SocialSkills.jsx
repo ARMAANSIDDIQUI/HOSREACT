@@ -5,18 +5,12 @@ import { motion } from "framer-motion";
 // Import images manually
 import socialSkills0 from "../assets/social_skills/social_skills0.jpg";
 import socialSkills1 from "../assets/social_skills/social_skills1.jpg";
-import socialSkills2 from "../assets/social_skills/social_skills2.jpg";
-import socialSkills3 from "../assets/social_skills/social_skills3.jpg";
-import socialSkills4 from "../assets/social_skills/social_skills4.jpg";
 import socialSkills5 from "../assets/social_skills/social_skills5.jpg";
 
 const SocialSkills = () => {
   const images = [
     socialSkills0,
     socialSkills1,
-    socialSkills2,
-    socialSkills3,
-    socialSkills4,
     socialSkills5,
   ];
 

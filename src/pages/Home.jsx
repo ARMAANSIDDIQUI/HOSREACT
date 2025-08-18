@@ -6,6 +6,8 @@ import Navbar from '../components/Navbar';
 import FooterMain from '../components/FooterMain';
 import CustomCarousel from '../components/Carousel';
 
+import ColoredIcon from "../components/ColoredIcon";
+
 // const tags = [
 //   "Speech & language therapy", "Speech therapy for kids", "Speech therapist for kids near me", "speech therapy centers",
 //   "Speech therapy in moradabad", "", "Best speech therapist near me", "Speech therapy center near me",
@@ -98,48 +100,23 @@ export default function Home() {
       <div className="min-h-screen w-full bg-gradient-to-br from-purple-100 to-white px-4 py-8">
 
         {/* Services Icons */}
-<div className="flex flex-wrap justify-center gap-8 text-purple-700 mb-16">
-  {services.map((service, index) => {
-    // Rainbow colors to cycle through
-    const rainbowColors = [
-      "text-red-500",
-      "text-orange-500",
-      "text-yellow-500",
-      "text-green-500",
-      "text-blue-500",
-      "text-indigo-500",
-      "text-purple-500",
-      "text-pink-500",
-    ];
-    const iconColor = rainbowColors[index % rainbowColors.length];
+        <div className="flex flex-wrap justify-center gap-8 text-purple-700 mb-16">
+          {services.map((service, index) => (
+            <Link
+              key={index}
+              to={service.path}
+              className="flex flex-col items-center group relative w-32"
+            >
+              {/* Use extracted component */}
+              <ColoredIcon icon={service.icon} index={index} />
 
-    return (
-      <Link
-        key={index}
-        to={service.path}
-        className="flex flex-col items-center group relative w-32"
-      >
-        <motion.div
-          whileHover={{ scale: 1.2, rotate: 5 }}
-          whileTap={{ scale: 0.9, rotate: -5 }}
-          className="relative text-4xl bg-white p-5 rounded-full shadow-md transition-all"
-        >
-          {/* Rotating Dotted Circle */}
-                            <div className="absolute inset-0 rounded-full p-[2px] animate-spin-slow"
-              style={{ background: "conic-gradient(red, yellow, green, cyan, blue, purple, red)" }}>
-
-
-          <div className="rounded-full h-full w-full bg-white"></div>
+              <span className="mt-2 text-sm font-medium text-gray-800 group-hover:underline text-center">
+                {service.label}
+              </span>
+            </Link>
+          ))}
         </div>
-          <div className={`relative z-10 ${iconColor}`}>{service.icon}</div>
-        </motion.div>
-        <span className="mt-2 text-sm font-medium text-gray-800 group-hover:underline text-center">
-          {service.label}
-        </span>
-      </Link>
-    );
-  })}
-</div>
+
 
 
         {/* Tags Section

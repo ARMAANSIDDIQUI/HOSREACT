@@ -3,13 +3,12 @@ import React from "react";
 import { motion } from "framer-motion";
 
 // Import images manually
-import vocational0 from "../assets/vocational/vocational0.jpg";
 import vocational1 from "../assets/vocational/vocational1.jpg";
 import vocational2 from "../assets/vocational/vocational2.jpg";
 import vocational3 from "../assets/vocational/vocational3.jpg";
 
 const Vocational = () => {
-  const images = [vocational0, vocational1, vocational2, vocational3];
+  const images = [vocational1, vocational2, vocational3];
 
   return (
     <div className="mb-16">

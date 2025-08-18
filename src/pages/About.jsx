@@ -13,9 +13,10 @@ import carousel1 from "../assets/carousel1.jpg";
 import carousel2 from "../assets/carousel2.jpg";
 import carousel3 from "../assets/carousel3.jpg";
 import carousel5 from "../assets/physio.jpg";
-
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import teamImage from "../assets/team.jpg"; // Replace with real team image
-
+import logo from "../assets/logo.jpg";
 export const carouselData = [
   {
     image: carousel0,
@@ -38,6 +39,32 @@ export const carouselData = [
 ];
 
 const About = () => {
+
+  const location = useLocation();
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace("#", "");
+
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+        return;
+      }
+
+      // Fallback: match with refs if needed
+      if (id === "vision" && visionRef.current) {
+        visionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      if (id === "mission" && missionRef.current) {
+        missionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      if (id === "values" && valuesRef.current) {
+        valuesRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  }, [location]);
+
+
   const visionRef = useRef(null);
   const missionRef = useRef(null);
   const valuesRef = useRef(null);
@@ -58,14 +85,29 @@ const About = () => {
 
       {/* About the Organisation */}
       <div className="px-6 py-12 text-gray-800 max-w-5xl mx-auto">
+      <motion.div
+        className="flex flex-col md:flex-row items-center gap-6 justify-center"
+        initial="hidden"
+        whileInView="visible"
+        variants={fadeIn}
+      >
+        {/* Logo */}
+        <img
+          src={logo}
+          alt="House of Specials Logo"
+          className="h-16 w-24 rounded-2xl object-cover sm:h-10 sm:w-14"
+        />
+
+        {/* Heading */}
         <motion.h2
-          className="text-4xl font-bold mb-6 text-center text-purple-700"
+          className="text-4xl font-bold text-purple-700 text-center md:text-left"
           initial="hidden"
           whileInView="visible"
           variants={fadeIn}
         >
           About the Organisation
         </motion.h2>
+      </motion.div>
         <motion.p
           className="text-gray-700 text-lg leading-relaxed"
           initial="hidden"
@@ -110,73 +152,83 @@ const About = () => {
         </div>
 
         {/* VISION */}
-<div ref={visionRef} className="flex flex-col lg:flex-row items-center gap-10 mb-20">
-  <motion.img
-    src={carousel1}
-    alt="Vision"
-    className="w-full max-w-md rounded-xl"
-    initial="hidden"
-    whileInView="visible"
-    variants={fadeIn}
-  />
-  <motion.div
-    className="max-w-2xl"
-    initial="hidden"
-    whileInView="visible"
-    variants={fadeIn}
-  >
-    <h2 className="text-3xl font-bold mb-4">Vision</h2>
-    <p className="mb-6 text-gray-600 leading-relaxed">
-      Our vision is to create a future where every child with neurodevelopmental or behavioral challenges 
-      thrives in a nurturing, inclusive, and opportunity-rich environment. We aspire to become a national leader 
-      in child-centered therapy and developmental care—empowering families, celebrating individual strengths, 
-      and building a society that embraces diversity and dignity for all.
-    </p>
-  </motion.div>
-</div>
-
-{/* MISSION */}
-<div ref={missionRef} className="flex flex-col lg:flex-row-reverse items-center gap-10 mb-20">
-  <motion.img
-    src={carousel5}
-    alt="Mission"
-    className="w-full max-w-md rounded-xl"
-    initial="hidden"
-    whileInView="visible"
-    variants={fadeIn}
-  />
-  <motion.div
-    className="max-w-2xl"
-    initial="hidden"
-    whileInView="visible"
-    variants={fadeIn}
-  >
-    <h2 className="text-3xl font-bold mb-4">Mission</h2>
-    <p className="mb-6 text-gray-600 leading-relaxed">
-      Our mission is to provide comprehensive, compassionate, and personalized care through over 12+ 
-      specialized therapy services including Speech Therapy, Occupational Therapy, ABA Therapy, Autism-focused 
-      interventions, and developmental support. We are committed to fostering holistic growth by delivering 
-      evidence-based practices, empowering caregivers, and equipping each child with the skills and confidence 
-      needed to flourish in daily life and beyond.
-    </p>
-  </motion.div>
-</div>
-
-
-        {/* VALUES */}
-        <div ref={valuesRef} className="flex flex-col  items-center gap-10 mb-20">
+        <div ref={visionRef} id="visionRef" className="flex flex-col lg:flex-row items-center gap-10 mb-20">
+          <motion.img
+            src={carousel1}
+            alt="Vision"
+            className="w-full max-w-md rounded-xl"
+            initial="hidden"
+            whileInView="visible"
+            variants={fadeIn}
+          />
           <motion.div
             className="max-w-2xl"
             initial="hidden"
             whileInView="visible"
             variants={fadeIn}
           >
-            <center><h2 className="text-3xl font-bold pb-8 mb-4">OUR CORE VALUES</h2></center>
-            <div className="flex-1 min-w-[350px] max-w-[500px]">
-              {/* <PentagonValues /> */}
-            </div>
-            <div className="flex-1 min-w-[350px] max-w-[500px]">
-              <ArcValues />
+            <h2 className="text-3xl font-bold mb-4">Vision</h2>
+            <p className="mb-6 text-gray-600 leading-relaxed">
+              House of Specials is formed with the mission to provide high-quality services 
+              for the differently–abled in small towns.
+            </p>
+            
+          </motion.div>
+        </div>
+
+        {/* MISSION */}
+        <div id="missionRef" ref={missionRef} className="flex flex-col lg:flex-row-reverse items-center gap-10 mb-20">
+          <motion.img
+            src={carousel5}
+            alt="Mission"
+            className="w-full max-w-md rounded-xl"
+            initial="hidden"
+            whileInView="visible"
+            variants={fadeIn}
+          />
+          <motion.div
+            className="max-w-2xl"
+            initial="hidden"
+            whileInView="visible"
+            variants={fadeIn}
+          >
+            <h2 className="text-3xl font-bold mb-4">Mission</h2>
+            <p className="mb-6 text-gray-600 leading-relaxed">
+              To enable and empower persons with disabilities and their families in Moradabad. 
+              To conduct awareness programs and provide a safe and accepting environment for the 
+              differently abled to learn and reach their utmost potential.
+            </p>
+          </motion.div>
+        </div>
+
+        {/* VALUES */}
+        <div
+          id="valuesRef"
+          ref={valuesRef}
+          className="flex flex-col items-center gap-10 mb-20 px-4 sm:px-6 lg:px-8"
+        >
+          <motion.div
+            className="w-full max-w-5xl"
+            initial="hidden"
+            whileInView="visible"
+            variants={fadeIn}
+          >
+            <h2 className="text-2xl sm:text-3xl font-bold text-center pb-6 sm:pb-8 mb-4">
+              OUR CORE VALUES
+            </h2>
+
+            <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-8">
+              {/* Pentagon */}
+              <div className="flex-1 min-w-[280px] max-w-[400px] w-full">
+                <PentagonValues />
+              </div>
+
+              {/* Arc */}
+
+              <div className="min-w-[280px] max-w-[400px] w-full center self-start">
+                <ArcValues />
+              </div>
+
             </div>
           </motion.div>
         </div>

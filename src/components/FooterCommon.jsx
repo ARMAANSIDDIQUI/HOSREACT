@@ -14,9 +14,9 @@ const FooterCommon = () => {
 
 
             </p>
-            <p className="text-xs text-gray-200 mt-1">
+            {/* <p className="text-xs text-gray-200 mt-1">
               Committed to supporting your child’s unique journey with care, compassion, and expertise — offering Speech Therapy, Occupational Therapy, ABA, and 12+ tailored interventions designed for Autism Spectrum and developmental challenges, to help them grow, connect, and thrive.
-            </p>
+            </p> */}
           </div>
 
           {/* Contact Info */}
@@ -75,7 +75,7 @@ const FooterCommon = () => {
           </div>
 
           {/* Feedback */}
-          <p className="text-sm text-gray-300">Comments & feedback</p>
+          {/* <p className="text-sm text-gray-300">Comments & feedback</p> */}
         </div>
       </footer>
     </>

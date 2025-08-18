@@ -45,7 +45,6 @@ export default function Contact() {
     name: "",
     email: "",
     phone: "",
-    reason: "",
     message: "",
   });
   const [status, setStatus] = useState("");
@@ -119,98 +118,86 @@ export default function Contact() {
             {status}
           </div>
         )} */}
+      <form
+        ref={form}
+        onSubmit={handleSubmit}
+        className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left"
+      >
+        <div>
+          <label className="block mb-1 font-medium">Title</label>
+          <select
+            name="title"
+            value={formData.title}
+            onChange={handleChange}
+            className="w-full border border-gray-300 rounded px-3 py-2"
+            required
+          >
+            <option value="">- Select -</option>
+            <option value="Mr.">Mr.</option>
+            <option value="Mrs.">Mrs.</option>
+            <option value="Ms.">Ms.</option>
+            <option value="Dr.">Dr.</option>
+          </select>
+        </div>
 
-        <form
-          ref={form}
-          onSubmit={handleSubmit}
-          className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left"
-        >
-          <div>
-            <label className="block mb-1 font-medium">Title</label>
-            <select
-              name="title"
-              value={formData.title}
-              onChange={handleChange}
-              className="w-full border border-gray-300 rounded px-3 py-2"
-              required
-            >
-              <option value="">- Select -</option>
-              <option value="Mr.">Mr.</option>
-              <option value="Mrs.">Mrs.</option>
-              <option value="Ms.">Ms.</option>
-              <option value="Dr.">Dr.</option>
-            </select>
-          </div>
+        <div>
+          <label className="block mb-1 font-medium">Name</label>
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            className="w-full border border-gray-300 rounded px-3 py-2"
+            required
+          />
+        </div>
 
-          <div>
-            <label className="block mb-1 font-medium">Name</label>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              className="w-full border border-gray-300 rounded px-3 py-2"
-              required
-            />
-          </div>
+        <div>
+          <label className="block mb-1 font-medium">Email</label>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            className="w-full border border-gray-300 rounded px-3 py-2"
+            required
+          />
+        </div>
 
-          <div>
-            <label className="block mb-1 font-medium">Email</label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              className="w-full border border-gray-300 rounded px-3 py-2"
-              required
-            />
-          </div>
+        <div>
+          <label className="block mb-1 font-medium">Phone</label>
+          <input
+            type="tel"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            className="w-full border border-gray-300 rounded px-3 py-2"
+            required
+          />
+        </div>
 
-          <div>
-            <label className="block mb-1 font-medium">Phone</label>
-            <input
-              type="tel"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              className="w-full border border-gray-300 rounded px-3 py-2"
-              required
-            />
-          </div>
+        <div className="md:col-span-2">
+          <label className="block mb-1 font-medium">Message</label>
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            rows="5"
+            className="w-full border border-gray-300 rounded px-3 py-2"
+            required
+          />
+        </div>
 
-          <div className="md:col-span-2">
-            <label className="block mb-1 font-medium">Reason for Contact</label>
-            <input
-              type="text"
-              name="reason"
-              value={formData.reason}
-              onChange={handleChange}
-              className="w-full border border-gray-300 rounded px-3 py-2"
-              required
-            />
-          </div>
+        <div className="md:col-span-2">
+          <button
+            type="submit"
+            className="w-full bg-blue-600 text-white py-3 rounded hover:bg-blue-700 transition font-semibold"
+          >
+            Send Message
+          </button>
+        </div>
+      </form>
 
-          <div className="md:col-span-2">
-            <label className="block mb-1 font-medium">Message</label>
-            <textarea
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              rows="5"
-              className="w-full border border-gray-300 rounded px-3 py-2"
-              required
-            />
-          </div>
-
-          <div className="md:col-span-2">
-            <button
-              type="submit"
-              className="w-full bg-blue-600 text-white py-3 rounded hover:bg-blue-700 transition font-semibold"
-            >
-              Send Message
-            </button>
-          </div>
-        </form>
       </div>
 
       <div className="w-full">

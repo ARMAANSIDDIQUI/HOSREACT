@@ -5,12 +5,10 @@ import { motion } from "framer-motion";
 // Import images manually
 import shopping0 from "../assets/shopping/shopping0.jpg";
 import shopping1 from "../assets/shopping/shopping1.jpg";
-import shopping2 from "../assets/shopping/shopping2.jpg";
-import shopping3 from "../assets/shopping/shopping3.jpg";
 import shopping4 from "../assets/shopping/shopping4.jpg";
 
 const Shopping = () => {
-  const images = [shopping0, shopping1, shopping2, shopping3, shopping4];
+  const images = [shopping0, shopping1, shopping4];
 
   return (
     <div className="mb-16">

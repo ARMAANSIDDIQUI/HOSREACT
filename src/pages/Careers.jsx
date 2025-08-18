@@ -136,7 +136,7 @@ export default function Careers() {
       <div className="max-w-4xl mx-auto px-6 py-10 space-y-6 text-gray-800">
         <h2 className="text-3xl font-bold text-pink-700 text-center">We're Hiring!</h2>
         <p className="text-lg text-center">
-          Join us as a <strong>Speech Therapist</strong>, <strong>Occupational Therapist</strong>, or <strong>Physiotherapist</strong> at House of Specials.
+          Join us as a <strong>Speech Therapist</strong>, <strong>Occupational Therapist</strong>, <strong>Physiotherapist</strong>, or <strong>Special Educator</strong> at House of Specials.
         </p>
         <div className="space-y-3">
           <h3 className="text-xl font-semibold text-pink-700">Requirements</h3>

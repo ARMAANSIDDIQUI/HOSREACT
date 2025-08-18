@@ -48,9 +48,9 @@ const FooterMain = () => {
 
               </p>
             </div>
-            <p className="text-gray-200 text-xs pl-6">
+            {/* <p className="text-gray-200 text-xs pl-6">
               Committed to supporting your child’s unique journey with care, compassion, and expertise — offering Speech Therapy, Occupational Therapy, ABA, and 12+ tailored interventions designed for Autism Spectrum and developmental challenges, to help them grow, connect, and thrive.
-            </p>
+            </p> */}
           </div>
 
           {/* Contact Info */}
@@ -86,9 +86,15 @@ const FooterMain = () => {
                 <FaCircle className="text-xs" /> About Us
               </h3>
               <ul className="ml-6 space-y-1 text-gray-200">
-                <li>Vision</li>
-                <li>Mission</li>
-                <li>Values</li>
+                <li>
+                  <Link to="/about#visionRef">Vision</Link>
+                </li>
+                <li>
+                  <Link to="/about#missionRef">Mission</Link>
+                </li>
+                <li>
+                  <Link to="/about#valuesRef">Values</Link>
+                </li>
               </ul>
             </div>
           </div>
@@ -139,7 +145,7 @@ const FooterMain = () => {
                 </Link>
               </li>
             </ul>
-            <p className="mt-4 text-pink-300 hover:underline cursor-pointer text-sm">Comments & feedback</p>
+            {/* <p className="mt-4 text-pink-300 hover:underline cursor-pointer text-sm">Comments & feedback</p> */}
           </div>
         </div>
       </footer>
