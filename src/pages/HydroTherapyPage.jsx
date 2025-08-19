@@ -6,7 +6,7 @@ import FooterCommon from '../components/FooterCommon';
 import CustomCarousel from '../components/Carousel';
 import TherapyInfoSection from '../components/TherapyInfoCard';
 
-// Hydrotherapy content
+// This object holds the content for the hydrotherapy section.
 const hydroTherapyContent = {
   imageSrc:[hydro1, hydro2],
   imageAlt: "Hydrotherapy Image",
@@ -33,6 +33,8 @@ import {
   FaHeartbeat, FaSun 
 } from 'react-icons/fa';
 import ColoredIcon from '../components/ColoredIcon';
+
+// This array defines the list of services for the component.
 const services = [
   { icon: <FaChild />, label: 'Autism Therapy', path: '/autism-therapy' },
   { icon: <FaComments />, label: 'Speech Therapy', path: '/speech-therapy' },
@@ -68,6 +70,7 @@ import hydro1 from "../assets/hydro1.jpg";
 
 import hydro2 from "../assets/hydro2.jpg";
 
+// This array defines the content for the carousel at the top of the page.
 export const carouselData = [
   {
     image: carousel1,
@@ -91,6 +94,7 @@ export const carouselData = [
 
 
 
+// This is the main page component for the Hydrotherapy section.
 export default function HydroTherapyPage() {
   return (
     <div className="bg-gradient-to-br from-purple-100 to-white">

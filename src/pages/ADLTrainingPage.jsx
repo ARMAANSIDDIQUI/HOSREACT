@@ -23,9 +23,10 @@ import carousel1 from "../assets/carousel1.jpg";
 import carousel2 from "../assets/carousel2.jpg";
 import carousel3 from "../assets/carousel3.jpg";
 import carousel4 from "../assets/carousel4.jpg";
-import carousel5 from "../assets/carousel5.jpg";
+import carousel5 from "../assets/physio.jpg";
 
 
+// This array defines the list of services for the component.
 const services = [
   { icon: <FaChild />, label: 'Autism Therapy', path: '/autism-therapy' },
   { icon: <FaComments />, label: 'Speech Therapy', path: '/speech-therapy' },
@@ -48,7 +49,8 @@ const services = [
   { icon: <FaSun />, label: 'Sensory Integration', path: '/sensory-integration' },
   { icon: <FaHome />, label: 'Daycare Facility', path: '/daycare' }
 ];
-//ADL Training Content
+
+// This object holds the content to be passed as props to the `TherapyInfoSection` component.
 const adlTrainingContent = {
   imageSrc:[adl1, adl3],
   imageAlt: "ADL Training Image",
@@ -69,7 +71,7 @@ const adlTrainingContent = {
   },
 };
 
-// 🎠 Carousel Data
+// This array defines the content for the carousel at the top of the page.
 export const carouselData = [
   {
     image: carousel1,
@@ -97,7 +99,7 @@ export const carouselData = [
   },
 ];
 
-// 📄 ADL Training Page Component
+// This is the main page component for the ADL Training section.
 export default function ADLTrainingPage() {
   return (
     <div className='bg-gradient-to-br from-purple-100 to-white'>
@@ -105,7 +107,7 @@ export default function ADLTrainingPage() {
       <CustomCarousel slides={carouselData} />
 
       <div className="min-h-screen w-full bg-gradient-to-br from-purple-100 to-white px-4 py-8">
-        {/* ADL Info */}
+        {/* The `TherapyInfoSection` component is rendered with data passed from the `adlTrainingContent` object. */}
         <TherapyInfoSection {...adlTrainingContent} />
 
         {/* Services Flex */}
@@ -113,13 +115,14 @@ export default function ADLTrainingPage() {
           <h1 className="text-2xl font-bold text-purple-700 mb-6">OUR OTHER SERVICES</h1>
         </center>
         <div className="flex flex-wrap justify-center gap-8 text-purple-700 mb-16">
+          {/* The `map` function iterates over the `services` array to dynamically create a grid of links. */}
           {services.map((service, index) => (
             <Link
               key={index}
               to={service.path}
               className="flex flex-col items-center group relative w-32"
             >
-              {/* Use extracted component */}
+              {/* The `ColoredIcon` component is used to display a colored, animated icon for each service. */}
               <ColoredIcon icon={service.icon} index={index} />
 
               <span className="mt-2 text-sm font-medium text-gray-800 group-hover:underline text-center">

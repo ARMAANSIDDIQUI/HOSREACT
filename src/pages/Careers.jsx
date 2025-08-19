@@ -12,6 +12,7 @@ import carousel3 from "../assets/carousel3.jpg";
 import carousel4 from "../assets/carousel4.jpg";
 import carousel5 from "../assets/physio.jpg";
 
+// This array defines the content for the custom carousel at the top of the page.
 export const carouselData = [
   {
     image: carousel1,
@@ -40,9 +41,12 @@ export const carouselData = [
 ];
 
 export default function Careers() {
+  // `useRef` is used to create a direct reference to the HTML form element.
   const form = useRef();
+  // `useState` is used to store and manage validation errors for the form.
   const [formErrors, setFormErrors] = useState({});
 
+  // This function validates the form inputs and updates the `formErrors` state.
   const validateForm = () => {
     const errors = {};
     const formData = new FormData(form.current);
@@ -56,9 +60,11 @@ export default function Careers() {
     if (!name || name.length < 2) {
       errors.user_name = "Name must be at least 2 characters.";
     }
+    // A regular expression is used here to check for a valid email format.
     if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
       errors.user_email = "Please enter a valid email.";
     }
+    // A regular expression is used to validate that the phone number contains exactly 10 digits.
     if (!phone || !/^\d{10}$/.test(phone)) {
       errors.user_phone = "Phone must be a 10-digit number.";
     }
@@ -69,15 +75,19 @@ export default function Careers() {
       errors.message = "Please tell us why you want to join.";
     }
     setFormErrors(errors);
+    // Returns true if there are no errors, allowing the form to be submitted.
     return Object.keys(errors).length === 0;
   };
 
+  // This function handles the form submission.
   const sendEmail = (e) => {
     e.preventDefault();
+    // It first calls `validateForm()` and stops the function if validation fails.
     if (!validateForm()) return;
 
     const formData = new FormData(form.current);
 
+    // This uses the `emailjs` library to send the form data as an email.
     emailjs
       .send(
         "service_zgjayp7", // your EmailJS service ID
@@ -103,7 +113,6 @@ export default function Careers() {
         }
       );
   };
-
 
   return (
     <div className="bg-gradient-to-br from-purple-100 to-white">
@@ -181,6 +190,7 @@ export default function Careers() {
               placeholder="Your Name"
               className="w-full border rounded px-4 py-2"
             />
+            {/* Conditionally displays an error message if the name input is invalid. */}
             {formErrors.user_name && (
               <p className="text-red-500 text-sm">{formErrors.user_name}</p>
             )}
@@ -193,6 +203,7 @@ export default function Careers() {
               placeholder="Your Email"
               className="w-full border rounded px-4 py-2"
             />
+            {/* Conditionally displays an error message if the email input is invalid. */}
             {formErrors.user_email && (
               <p className="text-red-500 text-sm">{formErrors.user_email}</p>
             )}
@@ -205,6 +216,7 @@ export default function Careers() {
               placeholder="Your Phone Number"
               className="w-full border rounded px-4 py-2"
             />
+            {/* Conditionally displays an error message if the phone number input is invalid. */}
             {formErrors.user_phone && (
               <p className="text-red-500 text-sm">{formErrors.user_phone}</p>
             )}
@@ -217,6 +229,7 @@ export default function Careers() {
               placeholder="Position you're applying for"
               className="w-full border rounded px-4 py-2"
             />
+            {/* Conditionally displays an error message if the position input is invalid. */}
             {formErrors.position && (
               <p className="text-red-500 text-sm">{formErrors.position}</p>
             )}
@@ -229,6 +242,7 @@ export default function Careers() {
               rows="4"
               className="w-full border rounded px-4 py-2"
             />
+            {/* Conditionally displays an error message if the message input is invalid. */}
             {formErrors.message && (
               <p className="text-red-500 text-sm">{formErrors.message}</p>
             )}

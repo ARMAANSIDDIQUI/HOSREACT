@@ -7,6 +7,7 @@ import {
   FaSearch,
 } from "react-icons/fa";
 
+// An array of objects, each representing a core value with its label, a unique color, and a corresponding icon.
 const coreValues = [
   { label: "Respect and Integrity", color: "#EF5350", icon: <FaHandshake size={20} /> },
   { label: "Openness", color: "#FFA726", icon: <FaDoorOpen size={20} /> },
@@ -25,6 +26,7 @@ export default function PentagonValues() {
           preserveAspectRatio="xMidYMid meet"
         >
           <defs>
+            {/* The `<filter>` element is used to apply a drop shadow effect to the pentagon shape. */}
             <filter id="shadow">
               <feDropShadow dx="0" dy="4" stdDeviation="3" floodColor="#999" />
             </filter>
@@ -32,6 +34,7 @@ export default function PentagonValues() {
 
           {/* Pentagon shape */}
           <polygon
+            // The `points` attribute defines the vertices of the pentagon using x,y coordinates.
             points="200,60 335,150 275,325 125,325 65,150"
             fill="none"
             stroke="#e5e7eb" // tailwind gray-200
@@ -41,6 +44,7 @@ export default function PentagonValues() {
 
           {/* Lines from center to vertices */}
           {coreValues.map((val, i) => {
+            // Trigonometry is used to calculate the coordinates for the lines, arranging them in a star shape.
             const angle = (2 * Math.PI * i) / 5 - Math.PI / 2;
             const x = 200 + 140 * Math.cos(angle);
             const y = 200 + 140 * Math.sin(angle);
@@ -60,6 +64,7 @@ export default function PentagonValues() {
 
         {/* Values around the pentagon */}
         {coreValues.map((val, i) => {
+          // Trigonometry is used to calculate the coordinates for the value labels, positioning them around the pentagon.
           const angle = (2 * Math.PI * i) / 5 - Math.PI / 2;
           const x = 200 + 155 * Math.cos(angle);
           const y = 200 + 155 * Math.sin(angle);
@@ -68,6 +73,7 @@ export default function PentagonValues() {
               key={val.label}
               className="absolute transform -translate-x-1/2 -translate-y-1/2 min-w-[70px] max-w-[100px] px-2 py-1 rounded-lg text-white font-semibold text-xs flex flex-col items-center shadow-md border border-white/40 text-center"
               style={{
+                // The `x` and `y` coordinates are converted to percentages to ensure the values are positioned correctly within the responsive SVG.
                 left: `${x / 4}%`,
                 top: `${y / 4}%`,
                 backgroundColor: val.color,
@@ -82,11 +88,6 @@ export default function PentagonValues() {
         })}
 
         {/* Center Title Box */}
-        {/* <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[60%] sm:w-[50%] p-2 sm:p-3 bg-white/95 rounded-xl shadow-md flex items-center justify-center">
-          <h2 className="text-center text-sm sm:text-lg font-bold text-slate-700 tracking-wide">
-            Core Values
-          </h2>
-        </div> */}
       </div>
     </div>
   );

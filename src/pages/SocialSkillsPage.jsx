@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
-// Replace if needed
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import FooterCommon from '../components/FooterCommon';
 import CustomCarousel from '../components/Carousel';
 import TherapyInfoSection from '../components/TherapyInfoCard';
 
+// This object holds the content for the social skills training section.
 const socialSkillContent = {
   imageSrc:[social1, social2],
   imageAlt: "Social Skills Training Image",
@@ -33,6 +33,7 @@ import {
   FaHeartbeat, FaSun 
 } from 'react-icons/fa';
 
+// This array defines the services to be displayed.
 const services = [
   { icon: <FaChild />, label: 'Autism Therapy', path: '/autism-therapy' },
   { icon: <FaComments />, label: 'Speech Therapy', path: '/speech-therapy' },
@@ -89,7 +90,6 @@ const carouselData = [
   },
 ];
 
-// 🧠 Social Skills Training Page Component
 export default function SocialSkillTrainingPage() {
   return (
     <div className="bg-gradient-to-br from-purple-100 to-white">
@@ -100,17 +100,18 @@ export default function SocialSkillTrainingPage() {
         <TherapyInfoSection {...socialSkillContent} />
 
         {/* Services Icons */}
-                <center>
+        <center>
           <h1 className="text-2xl font-bold text-purple-700 mb-6">OUR OTHER SERVICES</h1>
         </center>
         <div className="flex flex-wrap justify-center gap-8 text-purple-700 mb-16">
+          {/* The `map` function iterates over the `services` array to dynamically create a grid of links. */}
           {services.map((service, index) => (
             <Link
               key={index}
               to={service.path}
               className="flex flex-col items-center group relative w-32"
             >
-              {/* Use extracted component */}
+              {/* This component displays a colored and animated icon for each service. */}
               <ColoredIcon icon={service.icon} index={index} />
 
               <span className="mt-2 text-sm font-medium text-gray-800 group-hover:underline text-center">

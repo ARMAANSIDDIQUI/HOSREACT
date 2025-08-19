@@ -11,6 +11,7 @@ import carousel3 from "../assets/carousel3.jpg";
 import carousel4 from "../assets/carousel4.jpg";
 import carousel5 from "../assets/carousel5.jpg";
 
+// This array defines the content for the custom carousel at the top of the page.
 export const carouselData = [
   {
     image: carousel2,
@@ -39,7 +40,10 @@ export const carouselData = [
 ];
 
 export default function Contact() {
+  // `useRef` creates a direct reference to the HTML form element.
   const form = useRef();
+
+  // `useState` manages the form data. It stores the values of each input field.
   const [formData, setFormData] = useState({
     title: "",
     name: "",
@@ -47,15 +51,21 @@ export default function Contact() {
     phone: "",
     message: "",
   });
+
+  // `useState` can also be used to manage the form's submission status.
   const [status, setStatus] = useState("");
 
+  // This function updates the `formData` state whenever an input field changes.
+  // The `[e.target.name]` syntax dynamically selects the correct property to update.
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // This function handles form submission.
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Regular expressions are used to validate the email and phone number formats.
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const phoneRegex = /^[0-9]{10}$/;
 
@@ -68,6 +78,7 @@ export default function Contact() {
       return;
     }
 
+    // `emailjs.sendForm` sends the form data directly to the specified EmailJS service and template.
     emailjs
       .sendForm(
         "service_zgjayp7", // Your service ID
@@ -78,6 +89,7 @@ export default function Contact() {
       .then(
         () => {
           alert("Message sent successfully!");
+          // Resets the form fields and the state after a successful submission.
           setFormData({
             title: "",
             name: "",
@@ -94,7 +106,6 @@ export default function Contact() {
       );
   };
 
-
   return (
     <div className="bg-gradient-to-br from-purple-100 to-white">
       <Navbar />
@@ -107,17 +118,6 @@ export default function Contact() {
         </h3>
         <p className="text-xl font-bold text-black mb-6">📞 +91 89797 33393</p>
 
-        {/* {status && (
-          <div
-            className={`mb-6 text-sm font-medium px-4 py-2 rounded ${
-              status.includes("✅")
-                ? "bg-green-100 text-green-700"
-                : "bg-red-100 text-red-700"
-            }`}
-          >
-            {status}
-          </div>
-        )} */}
       <form
         ref={form}
         onSubmit={handleSubmit}
@@ -197,10 +197,10 @@ export default function Contact() {
           </button>
         </div>
       </form>
-
       </div>
 
       <div className="w-full">
+        {/* The `<iframe>` is used to embed a Google Maps location directly into the page. */}
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d55916.689734429354!2d78.757765!3d28.845019!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDUwJzQyLjEiTiA3OMKwNDUnMjguMCJF!5e0!3m2!1sen!2in!4v1754055410586!5m2!1sen!2in"
           width="100%"

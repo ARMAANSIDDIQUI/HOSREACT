@@ -1,11 +1,10 @@
 import { Link } from 'react-router-dom';
-// Replace if needed
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import FooterCommon from '../components/FooterCommon';
 import CustomCarousel from '../components/Carousel';
 import TherapyInfoSection from '../components/TherapyInfoCard';
-
+// This object holds the content for the Sensory Integration section.
 const sensoryIntegrationContent = {
   imageSrc:[sensory1, sensory2],
   imageAlt: "Sensory Integration Therapy Image",
@@ -33,6 +32,7 @@ import {
   FaHeartbeat, FaSun 
 } from 'react-icons/fa';
 
+// This array defines the services to be displayed.
 const services = [
   { icon: <FaChild />, label: 'Autism Therapy', path: '/autism-therapy' },
   { icon: <FaComments />, label: 'Speech Therapy', path: '/speech-therapy' },
@@ -69,6 +69,7 @@ import sensory1 from "../assets/sensory.jpg";
 
 import sensory2 from "../assets/sensory2.jpg";
 
+// This array defines the content for the carousel at the top of the page.
 const carouselData = [
   {
     image: carousel1,
@@ -90,7 +91,6 @@ const carouselData = [
   },
 ];
 
-//Sensory Integration Page Component
 export default function SensoryIntegrationPage() {
   return (
     <div className="bg-gradient-to-br from-purple-100 to-white">
@@ -98,6 +98,7 @@ export default function SensoryIntegrationPage() {
       <CustomCarousel slides={carouselData} />
 
       <div className="min-h-screen w-full bg-gradient-to-br from-purple-100 to-white px-4 py-8">
+        {/* The `...sensoryIntegrationContent` passes all properties of the object as individual props to the child component. */}
         <TherapyInfoSection {...sensoryIntegrationContent} />
 
         {/* Services Icons */}
@@ -105,13 +106,14 @@ export default function SensoryIntegrationPage() {
           <h1 className="text-2xl font-bold text-purple-700 mb-6">OUR OTHER SERVICES</h1>
         </center>
         <div className="flex flex-wrap justify-center gap-8 text-purple-700 mb-16">
+          {/* The `map` function iterates over the `services` array to dynamically create a grid of links. */}
           {services.map((service, index) => (
             <Link
               key={index}
               to={service.path}
               className="flex flex-col items-center group relative w-32"
             >
-              {/* Use extracted component */}
+              {/* This component displays a colored and animated icon for each service. */}
               <ColoredIcon icon={service.icon} index={index} />
 
               <span className="mt-2 text-sm font-medium text-gray-800 group-hover:underline text-center">

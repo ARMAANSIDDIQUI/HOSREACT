@@ -1,7 +1,5 @@
-// src/components/Festivals.jsx
 import React from "react";
 import { motion } from "framer-motion";
-
 
 import festivals0 from "../assets/festivals/festivals0.jpg";
 import festivals1 from "../assets/festivals/festivals1.jpg";
@@ -26,6 +24,7 @@ const Festivals = () => {
       {/* Section Heading */}
       <motion.h2
         className="text-3xl font-bold text-purple-700 text-center mb-3"
+        // This animation makes the heading fade in and slide up from below.
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -36,6 +35,7 @@ const Festivals = () => {
       {/* Description */}
       <motion.p
         className="text-center text-gray-700 mb-8 max-w-2xl mx-auto"
+        // This animation makes the paragraph fade in after a slight delay, following the heading.
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.6 }}
@@ -51,9 +51,12 @@ const Festivals = () => {
           <motion.div
             key={idx}
             className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300"
+            // This animation makes each image fade in and slide up as it comes into the viewport.
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
+            // This ensures the animation only plays the first time the element is viewed.
             viewport={{ once: true }}
+            // A staggered delay is applied to make each image animate in sequence.
             transition={{ duration: 0.6, delay: idx * 0.05 }}
           >
             <img

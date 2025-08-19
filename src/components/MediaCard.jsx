@@ -16,6 +16,7 @@ const MediaCard = ({
         <img
           src={imageSrc}
           alt={imageAlt}
+          // The `rounded-full` class creates a perfect circle from the square image.
           className="w-32 h-32 rounded-full border border-gray-400"
         />
       </div>
@@ -31,8 +32,9 @@ const MediaCard = ({
 
       {/* Read More link */}
       <p
-        className="text-orange-600 font-semibold cursor-pointer hover:underline"
+        // This `onClick` event handler calls the function passed from the parent component, which allows for custom behavior when the link is clicked.
         onClick={onReadMoreClick}
+        className="text-orange-600 font-semibold cursor-pointer hover:underline"
       >
         {readMoreText}
       </p>

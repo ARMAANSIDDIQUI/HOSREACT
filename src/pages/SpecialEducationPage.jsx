@@ -1,27 +1,25 @@
 import { Link } from 'react-router-dom';
-// Replace if needed
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import FooterCommon from '../components/FooterCommon';
 import CustomCarousel from '../components/Carousel';
 import TherapyInfoSection from '../components/TherapyInfoCard';
 
-const specialEducationContent = {
-  imageSrc:[special1,special2],
-  imageAlt: "Special Education Image",
-  title: "Special Education at House of Specials",
-  subtitle: "Tailored learning experiences to support children with unique abilities and challenges.",
+// This object holds the content for the social skills training section.
+const socialSkillContent = {
+  imageSrc:[social1, social2],
+  imageAlt: "Social Skills Training Image",
+  title: "Social Skills Training at House of Specials",
+  subtitle: "Helping individuals develop confidence and meaningful relationships.",
   paragraphs: [
-    "Special education is a tailored approach designed to meet the unique needs of children with disabilities. At House of Specials, we are dedicated to providing personalized learning experiences that cater to each child's individual abilities and challenges.",
-    "Our team of skilled special educators employs innovative teaching methods to support children with various disabilities, including Autism, ADHD, Cerebral Palsy, Down Syndrome, and Intellectual Disabilities.",
-    "We focus on developing academic skills, enhancing cognitive abilities, fostering social and emotional growth, and implementing behavior management strategies to help children develop positive behaviors and coping skills.",
-    "Why choose House of Specials for special education?",
-    "• Individualized Learning Plans: Customized education plans tailored to each child's strengths and challenges.",
-    "• Expert Team: Highly trained and experienced educators who specialize in diverse needs.",
-    "• Collaborative Approach: Close coordination with therapists, parents, and other professionals.",
-    "• Inclusive Environment: Supportive and welcoming classrooms that foster belonging and value.",
-    "• Behavior Management: Techniques to promote positive behavior and effective coping strategies.",
-    "• Holistic Development: Emphasis on academic, social, emotional, and life skill development.",
+    "At House of Specials, our social skills training program is designed to help children and adults with disabilities develop the interpersonal skills they need to navigate social situations successfully.",
+    "Our group-based approach offers a supportive environment where participants can practice and enhance their social skills through a variety of engaging activities. We organize outings to restaurants, movies, parks, and salons, providing real-world experiences that help individuals learn and grow. Additionally, our program includes group games, music classes, and academic activities, ensuring a well-rounded development of social competencies.",
+    "Why choose House of Specials for social skills training?",
+    "• Real-World Experiences: Our outings to various locations give participants practical opportunities to apply their social skills in different settings.",
+    "• Engaging Activities: From group games to music classes, we offer a diverse range of activities that make learning social skills fun and effective.",
+    "• Supportive Group Environment: Our group-based sessions provide a safe and encouraging space for individuals to interact and learn from each other.",
+    "• Holistic Development: We focus not only on social skills but also on enhancing communication, teamwork, and self-confidence.",
+    "• Expert Guidance: Our experienced staff members are dedicated to helping each participant reach their full potential in a nurturing and inclusive atmosphere.",
   ],
   links: {
     more: "/about",
@@ -35,13 +33,14 @@ import {
   FaHeartbeat, FaSun 
 } from 'react-icons/fa';
 
+// This array defines the services to be displayed.
 const services = [
   { icon: <FaChild />, label: 'Autism Therapy', path: '/autism-therapy' },
   { icon: <FaComments />, label: 'Speech Therapy', path: '/speech-therapy' },
   { icon: <FaRunning />, label: 'Occupational Therapy', path: '/occupational-therapy' },
 
   { icon: <FaFemale />, label: 'Psychological Counseling', path: '/psychological-counselling' },
-  // { icon: <FaBook />, label: 'Special Education', path: '/special-education' },
+  { icon: <FaBook />, label: 'Special Education', path: '/special-education' },
   { icon: <FaMedal />, label: 'Dance Therapy', path: '/dance-therapy' },
   { icon: <FaMusic />, label: 'Music Therapy', path: '/music-therapy' },
   { icon: <FaSpa />, label: 'Yoga Therapy', path: '/yoga-therapy' },
@@ -52,7 +51,7 @@ const services = [
   { icon: <FaUserFriends />, label: 'Parent Training', path: '/parent-training' },
   { icon: <FaSchool />, label: 'Teacher Training', path: '/teacher-training' },
   { icon: <FaUser />, label: 'School Training', path: '/school-training' },
-  { icon: <FaHandsHelping />, label: 'Social Skill Training', path: '/social-skill-training' },
+  //{ icon: <FaHandsHelping />, label: 'Social Skill Training', path: '/social-skill-training' },
   { icon: <FaHeartbeat />, label: 'Physiotherapy', path: '/physio-therapy' },
   { icon: <FaSun />, label: 'Sensory Integration', path: '/sensory-integration' },
   { icon: <FaHome />, label: 'Daycare Facility', path: '/daycare' }
@@ -65,54 +64,54 @@ import carousel3 from "../assets/carousel3.jpg";
 import carousel4 from "../assets/carousel4.jpg";
 import carousel5 from "../assets/carousel5.jpg";
 
+
+import social1 from "../assets/social.jpg";
+
+import social2 from "../assets/adl.jpg";
 import ColoredIcon from '../components/ColoredIcon';
-import special1 from "../assets/special.jpg";
-
-import special2 from "../assets/special2.jpg";
-
 const carouselData = [
   {
-    image: carousel2,
-    heading: "Special Education for Every Learner",
-    text: "Empowering children with personalized support and compassion.",
+    image: carousel1,
+    heading: "Building Relationships Through Interaction",
+    text: "Empowering individuals with the skills to connect confidently.",
     url: "/about",
   },
   {
-    image: carousel1,
-    heading: "Inclusive & Nurturing Classrooms",
-    text: "Where every child is seen, supported, and celebrated.",
+    image: carousel2,
+    heading: "Engaging Activities for Real-World Practice",
+    text: "From games to outings, every moment is a chance to grow.",
     url: "/contact",
   },
   {
-    image: carousel3,
-    heading: "Collaborative Development",
-    text: "Working together with families and professionals.",
+    image: carousel4,
+    heading: "Supportive Social Skills Environment",
+    text: "Fostering communication, empathy, and cooperation.",
     url: "/services",
   },
 ];
 
-// 🎓 Special Education Page Component
-export default function SpecialEducationPage() {
+export default function SocialSkillTrainingPage() {
   return (
     <div className="bg-gradient-to-br from-purple-100 to-white">
       <Navbar />
       <CustomCarousel slides={carouselData} />
 
       <div className="min-h-screen w-full bg-gradient-to-br from-purple-100 to-white px-4 py-8">
-        <TherapyInfoSection {...specialEducationContent} />
+        <TherapyInfoSection {...socialSkillContent} />
 
         {/* Services Icons */}
-                <center>
+        <center>
           <h1 className="text-2xl font-bold text-purple-700 mb-6">OUR OTHER SERVICES</h1>
         </center>
         <div className="flex flex-wrap justify-center gap-8 text-purple-700 mb-16">
+          {/* The `map` function iterates over the `services` array to dynamically create a grid of links. */}
           {services.map((service, index) => (
             <Link
               key={index}
               to={service.path}
               className="flex flex-col items-center group relative w-32"
             >
-              {/* Use extracted component */}
+              {/* This component displays a colored and animated icon for each service. */}
               <ColoredIcon icon={service.icon} index={index} />
 
               <span className="mt-2 text-sm font-medium text-gray-800 group-hover:underline text-center">

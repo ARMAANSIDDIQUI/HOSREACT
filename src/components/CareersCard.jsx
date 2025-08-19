@@ -13,10 +13,11 @@ export default function CareersCard({
   locations = [],
   about,
   sign,
-  reverse = false, // 🔄 NEW: controls layout direction
+  reverse = false,
 }) {
   return (
     <div
+      // The `reverse` prop conditionally changes the layout direction on medium screens and up.
       className={`w-full flex flex-col md:flex-row ${
         reverse ? "md:flex-row-reverse" : ""
       } bg-white shadow-lg rounded-xl overflow-hidden mb-10 border`}
@@ -34,10 +35,12 @@ export default function CareersCard({
             {subtitle}
           </h3>
 
+          {/* `whitespace-pre-line` preserves line breaks in the text. */}
           <p className="text-gray-700 text-sm mb-4 whitespace-pre-line">
             {description}
           </p>
 
+          {/* This section only renders if the `roles` array is not empty. */}
           {roles?.length > 0 && (
             <>
               <h4 className="font-semibold mt-4 text-pink-700">
@@ -51,6 +54,7 @@ export default function CareersCard({
             </>
           )}
 
+          {/* This section only renders if the `responsibilities` array is not empty. */}
           {responsibilities?.length > 0 && (
             <>
               <h4 className="font-semibold mt-4 text-pink-700">
@@ -64,6 +68,7 @@ export default function CareersCard({
             </>
           )}
 
+          {/* This section only renders if the `timings` prop is provided. */}
           {timings && (
             <p className="mt-4 text-sm">
               <span className="font-medium text-pink-700">Timings:</span>{" "}
@@ -71,6 +76,7 @@ export default function CareersCard({
             </p>
           )}
 
+          {/* This section only renders if the `sessions` prop is provided. */}
           {sessions && (
             <p className="text-sm">
               <span className="font-medium text-pink-700">
@@ -80,6 +86,7 @@ export default function CareersCard({
             </p>
           )}
 
+          {/* This section only renders if the `jobOpenings` array is not empty. */}
           {jobOpenings?.length > 0 && (
             <>
               <h4 className="font-semibold mt-4 text-pink-700">Job Openings</h4>
@@ -91,6 +98,7 @@ export default function CareersCard({
             </>
           )}
 
+          {/* This section only renders if the `locations` array is not empty. */}
           {locations?.length > 0 && (
             <>
               <h4 className="font-semibold mt-4 text-pink-700">Locations</h4>
@@ -102,6 +110,7 @@ export default function CareersCard({
             </>
           )}
 
+          {/* This section only renders if the `about` prop is provided. */}
           {about && (
             <>
               <h4 className="font-semibold mt-4 text-pink-700">
@@ -114,7 +123,7 @@ export default function CareersCard({
           )}
         </div>
 
-        {/* Signature */}
+        {/* This section only renders if the `sign` prop is provided. */}
         {sign && (
           <div className="mt-6 text-right italic text-pink-600 text-sm">
             {sign}

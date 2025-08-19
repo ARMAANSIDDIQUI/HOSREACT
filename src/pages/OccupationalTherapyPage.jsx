@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
-// Replace if needed
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import FooterCommon from '../components/FooterCommon';
 import CustomCarousel from '../components/Carousel';
 import TherapyInfoSection from '../components/TherapyInfoCard';
 import ColoredIcon from '../components/ColoredIcon';
-//Occupational Therapy Content
+
+// Content for the Occupational Therapy section.
 const occupationalTherapyContent = {
   imageSrc:[occu2, occu1],
   imageAlt: "Occupational Therapy Image",
@@ -35,6 +35,7 @@ import {
   FaHeartbeat, FaSun 
 } from 'react-icons/fa';
 
+// Defines the list of services for display.
 const services = [
   { icon: <FaChild />, label: 'Autism Therapy', path: '/autism-therapy' },
   { icon: <FaComments />, label: 'Speech Therapy', path: '/speech-therapy' },
@@ -70,6 +71,7 @@ import occu1 from "../assets/occupational.jpg";
 
 import occu2 from "../assets/occupational2.jpg";
 
+// Content for the carousel at the top of the page.
 export const carouselData = [
   {
     image: carousel4,
@@ -92,7 +94,7 @@ export const carouselData = [
 ];
 
 
-// 🧠 Occupational Therapy Page Component
+// Main page component for the Occupational Therapy section.
 export default function OccupationalTherapyPage() {
   return (
     <div className="bg-gradient-to-br from-purple-100 to-white">
@@ -103,7 +105,7 @@ export default function OccupationalTherapyPage() {
         <TherapyInfoSection {...occupationalTherapyContent} />
 
         {/* Services Icons */}
-                <center>
+        <center>
           <h1 className="text-2xl font-bold text-purple-700 mb-6">OUR OTHER SERVICES</h1>
         </center>
         <div className="flex flex-wrap justify-center gap-8 text-purple-700 mb-16">
@@ -113,7 +115,7 @@ export default function OccupationalTherapyPage() {
               to={service.path}
               className="flex flex-col items-center group relative w-32"
             >
-              {/* Use extracted component */}
+              {/* This component displays a colored and animated icon for each service. */}
               <ColoredIcon icon={service.icon} index={index} />
 
               <span className="mt-2 text-sm font-medium text-gray-800 group-hover:underline text-center">
@@ -122,8 +124,6 @@ export default function OccupationalTherapyPage() {
             </Link>
           ))}
         </div>
-
-
       </div>
 
       <FooterCommon />

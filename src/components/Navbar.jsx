@@ -3,8 +3,10 @@ import { FaGlobe } from "react-icons/fa";
 
 import logo from "../assets/logo.jpg";
 const Navbar = () => {
+  // `useState` creates a state variable `isOpen` to track if the mobile menu is open or closed.
   const [isOpen, setIsOpen] = useState(false);
 
+  // This function toggles the `isOpen` state between `true` and `false`.
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
@@ -22,6 +24,7 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Links */}
+        {/* The `hidden md:flex` classes hide this menu on mobile and display it as a flex container on medium screens and up. */}
         <div className="hidden md:flex space-x-10 text-white font-semibold">
           <a href="/" className="hover:text-gray-300">
             Home
@@ -49,6 +52,7 @@ const Navbar = () => {
           className="md:hidden flex items-center focus:outline-none"
           aria-label="Toggle menu"
         >
+          {/* These spans create the hamburger icon. The classes conditionally change based on the `isOpen` state to create the animated "X" shape when clicked. */}
           <div className="space-y-1.5">
             <span
               className={`block h-0.5 w-6 bg-white transition-transform duration-300 ${
@@ -70,6 +74,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
+      {/* This section is conditionally rendered based on the `isOpen` state. It's only visible when `isOpen` is true. */}
       {isOpen && (
         <div className="md:hidden bg-[#111620] px-6 pb-4 space-y-3 font-semibold text-white">
           <a href="/" className="block hover:text-gray-300" onClick={toggleMenu}>

@@ -8,12 +8,16 @@ const CustomCarousel = ({ slides }) => {
   return (
     <div className="w-full">
       <Carousel
+        // Enables automatic playback and an endless loop.
         autoPlay
         infiniteLoop
+        // Hides the thumbnail and status indicators.
         showThumbs={false}
         showStatus={false}
+        // Sets the time between slides and the transition speed.
         interval={5000}
         transitionTime={1000}
+        // Activates touch-based swiping for navigation.
         swipeable
         emulateTouch
       >
@@ -28,8 +32,11 @@ const CustomCarousel = ({ slides }) => {
 
             {/* Animated Text Overlay */}
             <motion.div
+              // Sets the initial animation state (hidden and slightly moved down).
               initial={{ opacity: 0, y: 30 }}
+              // Defines the final animation state (fully visible and in position).
               animate={{ opacity: 1, y: 0 }}
+              // Sets the duration of the animation.
               transition={{ duration: 1 }}
               className="
                 absolute inset-x-0 bottom-4 flex justify-center
@@ -40,6 +47,7 @@ const CustomCarousel = ({ slides }) => {
                 <h2 className="text-lg sm:text-2xl font-bold mb-2">{slide.heading}</h2>
                 <p className="text-sm sm:text-base mb-3">{slide.text}</p>
 
+                {/* Conditionally renders the 'Learn more' link only if a URL exists. */}
                 {slide.url && (
                   <a
                     href={slide.url}

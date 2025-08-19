@@ -1,5 +1,6 @@
-import { FaFacebookF, FaInstagram,FaHeart,FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaHeart, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import { Link } from "react-router-dom";
+
 const FooterCommon = () => {
   return (
     <>
@@ -11,12 +12,7 @@ const FooterCommon = () => {
             <p className="text-sm font-medium flex items-start gap-2">
               <FaHeart className="text-pink-600 mt-1" size={44}/>
               We are committed to empowering individuals with sensory, neurological, and emotional challenges by offering compassionate support, personalized care, and meaningful opportunities. Our aim is to help each person build the confidence and skills they need to thrive independently, feel included in society, and live a fulfilling life — filled with dignity, joy, and purpose.
-
-
             </p>
-            {/* <p className="text-xs text-gray-200 mt-1">
-              Committed to supporting your child’s unique journey with care, compassion, and expertise — offering Speech Therapy, Occupational Therapy, ABA, and 12+ tailored interventions designed for Autism Spectrum and developmental challenges, to help them grow, connect, and thrive.
-            </p> */}
           </div>
 
           {/* Contact Info */}
@@ -43,13 +39,14 @@ const FooterCommon = () => {
           </div>
 
           {/* Community Links */}
-          <div>
+          <div className="space-y-2">
             <h3 className="text-lg font-medium mb-2">OUR COMMUNITY</h3>
             <ul className="space-y-3">
               <li className="flex items-center gap-3">
                 <a
                   href="https://www.facebook.com/share/19L1QvtLtH/"
                   target="_blank"
+                  // `rel="noopener noreferrer"` is used for security when linking to new tabs.
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 hover:underline"
                 >
@@ -60,6 +57,7 @@ const FooterCommon = () => {
                 <a
                   href="https://www.instagram.com/houseofspecialswelfare?igsh=MWRzNmJlcjZpNGRwMg=="
                   target="_blank"
+                  // `rel="noopener noreferrer"` is used for security when linking to new tabs.
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 hover:underline"
                 >
@@ -67,15 +65,13 @@ const FooterCommon = () => {
                 </a>
               </li>
               <li className="flex items-center gap-3">
+                {/* This `Link` component from `react-router-dom` provides client-side navigation without a full page reload. */}
                 <Link to="/contact" className="flex items-center gap-3 hover:underline">
-                  📧 CONTACT US
+                  <span role="img" aria-label="email emoji">📧</span> CONTACT US
                 </Link>
               </li>
             </ul>
           </div>
-
-          {/* Feedback */}
-          {/* <p className="text-sm text-gray-300">Comments & feedback</p> */}
         </div>
       </footer>
     </>

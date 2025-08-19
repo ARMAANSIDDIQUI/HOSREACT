@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
-// Replace with actual image
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import FooterCommon from '../components/FooterCommon';
 import CustomCarousel from '../components/Carousel';
 import TherapyInfoSection from '../components/TherapyInfoCard';
+// This object holds the content for the teacher training section.
 const teacherTrainingContent = {
   imageSrc:[teacher1,teacher2],
   imageAlt: "Teacher Training",
@@ -24,7 +24,6 @@ const teacherTrainingContent = {
     more: "/about",
   },
 };
-
 import { 
   FaUser, FaHome,FaComments, FaRunning, FaBrain, FaFemale, FaBook, 
   FaMedal, FaMusic, FaSpa, FaSwimmer, FaClipboardList, FaUsers, 
@@ -32,18 +31,17 @@ import {
   FaHeartbeat, FaSun 
 } from 'react-icons/fa';
 
+// This array defines the services to be displayed.
 const services = [
   { icon: <FaChild />, label: 'Autism Therapy', path: '/autism-therapy' },
   { icon: <FaComments />, label: 'Speech Therapy', path: '/speech-therapy' },
   { icon: <FaRunning />, label: 'Occupational Therapy', path: '/occupational-therapy' },
-
   { icon: <FaFemale />, label: 'Psychological Counseling', path: '/psychological-counselling' },
   { icon: <FaBook />, label: 'Special Education', path: '/special-education' },
   { icon: <FaMedal />, label: 'Dance Therapy', path: '/dance-therapy' },
   { icon: <FaMusic />, label: 'Music Therapy', path: '/music-therapy' },
   { icon: <FaSpa />, label: 'Yoga Therapy', path: '/yoga-therapy' },
   { icon: <FaSwimmer />, label: 'Hydro Therapy', path: '/hydro-therapy' },
-  
   { icon: <FaUsers />, label: 'Group Sessions', path: '/group-sessions' },
   { icon: <FaChalkboardTeacher />, label: 'ADL Training', path: '/adl-training' },
   { icon: <FaUserFriends />, label: 'Parent Training', path: '/parent-training' },
@@ -54,7 +52,6 @@ const services = [
   { icon: <FaSun />, label: 'Sensory Integration', path: '/sensory-integration' },
   { icon: <FaHome />, label: 'Daycare Facility', path: '/daycare' }
 ];
-
 
 import carousel0 from "../assets/carousel0.jpg";
 import carousel1 from "../assets/carousel1.jpg";
@@ -90,7 +87,6 @@ const carouselData = [
   },
 ];
 
-//Teacher Training Page Component
 export default function TeacherTrainingPage() {
   return (
     <div className="bg-gradient-to-br from-purple-100 to-white">
@@ -98,7 +94,7 @@ export default function TeacherTrainingPage() {
       <CustomCarousel slides={carouselData} />
 
       <div className="min-h-screen w-full bg-gradient-to-br from-purple-100 to-white px-4 py-8">
-        {/* Info Section */}
+        {/* The `...teacherTrainingContent` passes all properties of the object as individual props to the child component. */}
         <TherapyInfoSection {...teacherTrainingContent} />
 
         {/* Services Grid */}
@@ -106,13 +102,14 @@ export default function TeacherTrainingPage() {
           <h1 className="text-2xl font-bold text-purple-700 mb-6">OUR OTHER SERVICES</h1>
         </center>
         <div className="flex flex-wrap justify-center gap-8 text-purple-700 mb-16">
+          {/* The `map` function iterates over the `services` array to dynamically create a grid of links. */}
           {services.map((service, index) => (
             <Link
               key={index}
               to={service.path}
               className="flex flex-col items-center group relative w-32"
             >
-              {/* Use extracted component */}
+              {/* This component displays a colored and animated icon for each service. */}
               <ColoredIcon icon={service.icon} index={index} />
 
               <span className="mt-2 text-sm font-medium text-gray-800 group-hover:underline text-center">

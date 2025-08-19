@@ -6,9 +6,8 @@ import FooterCommon from '../components/FooterCommon';
 import CustomCarousel from '../components/Carousel';
 import TherapyInfoSection from '../components/TherapyInfoCard';
 import ColoredIcon from '../components/ColoredIcon';
-// 👣 Dance therapy content
+// This object holds the content for the dance therapy section.
 const danceTherapyContent = {
-  // imageSrc:[dance],
   imageAlt: "Dance Therapy Image",
   title: "Dance Therapy at House of Specials",
   subtitle: "Movement is a powerful way to express emotions and foster connection.",
@@ -41,6 +40,7 @@ import carousel5 from "../assets/carousel5.jpg";
 
 import dance from "../assets/dance.jpg";
 
+// This array defines the services to be displayed.
 const services = [
   { icon: <FaChild />, label: 'Autism Therapy', path: '/autism-therapy' },
   { icon: <FaComments />, label: 'Speech Therapy', path: '/speech-therapy' },
@@ -48,7 +48,6 @@ const services = [
 
   { icon: <FaFemale />, label: 'Psychological Counseling', path: '/psychological-counselling' },
   { icon: <FaBook />, label: 'Special Education', path: '/special-education' },
-  // { icon: <FaMedal />, label: 'Dance Therapy', path: '/dance-therapy' },
   { icon: <FaMusic />, label: 'Music Therapy', path: '/music-therapy' },
   { icon: <FaSpa />, label: 'Yoga Therapy', path: '/yoga-therapy' },
   { icon: <FaSwimmer />, label: 'Hydro Therapy', path: '/hydro-therapy' },
@@ -64,7 +63,7 @@ const services = [
   { icon: <FaHome />, label: 'Daycare Facility', path: '/daycare' }
 ];
 
-//Carousel content (reuse or replace with dance-specific slides)
+//This array defines the content for the carousel at the top of the page.
 export const carouselData = [
   {
     image: carousel5,
@@ -113,7 +112,6 @@ export default function DanceTherapyPage() {
               to={service.path}
               className="flex flex-col items-center group relative w-32"
             >
-              {/* Use extracted component */}
               <ColoredIcon icon={service.icon} index={index} />
 
               <span className="mt-2 text-sm font-medium text-gray-800 group-hover:underline text-center">

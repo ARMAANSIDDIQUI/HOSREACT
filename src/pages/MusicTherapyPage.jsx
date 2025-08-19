@@ -5,13 +5,36 @@ import Navbar from '../components/Navbar';
 import FooterCommon from '../components/FooterCommon';
 import CustomCarousel from '../components/Carousel';
 import TherapyInfoSection from '../components/TherapyInfoCard';
+
+// This object holds the content for the hydrotherapy section.
+const hydroTherapyContent = {
+  imageSrc:[hydro1, hydro2],
+  imageAlt: "Hydrotherapy Image",
+  title: "Hydrotherapy at House of Specials",
+  subtitle: "Water-based therapy offers a unique and effective way to improve physical and sensory functioning.",
+  paragraphs: [
+    "At House of Specials, our hydrotherapy program provides a supportive environment for individuals to build strength, coordination, and confidence.",
+    "Guided by trained therapists, sessions use the properties of water to reduce stress on joints, improve mobility, and enhance sensory integration.",
+    "Why choose House of Specials for hydrotherapy?",
+    "• Personalized Approach: Individualized plans that cater to specific physical and sensory needs.",
+    "• Multidisciplinary Team: Collaboration with physiotherapists and occupational therapists for holistic care.",
+    "• Safe Environment: A controlled and supportive space for therapy.",
+    "• Proven Results: Significant improvements in physical abilities and sensory processing.",
+  ],
+  links: {
+    more: "/about",
+  },
+};
+
 import { 
   FaUser, FaHome,FaComments, FaRunning, FaBrain, FaFemale, FaBook, 
   FaMedal, FaMusic, FaSpa, FaSwimmer, FaClipboardList, FaUsers, 
   FaChalkboardTeacher, FaUserFriends, FaChild, FaSchool, FaHandsHelping, 
   FaHeartbeat, FaSun 
 } from 'react-icons/fa';
+import ColoredIcon from '../components/ColoredIcon';
 
+// This array defines the list of services for the component.
 const services = [
   { icon: <FaChild />, label: 'Autism Therapy', path: '/autism-therapy' },
   { icon: <FaComments />, label: 'Speech Therapy', path: '/speech-therapy' },
@@ -20,9 +43,9 @@ const services = [
   { icon: <FaFemale />, label: 'Psychological Counseling', path: '/psychological-counselling' },
   { icon: <FaBook />, label: 'Special Education', path: '/special-education' },
   { icon: <FaMedal />, label: 'Dance Therapy', path: '/dance-therapy' },
-  // { icon: <FaMusic />, label: 'Music Therapy', path: '/music-therapy' },
+  { icon: <FaMusic />, label: 'Music Therapy', path: '/music-therapy' },
   { icon: <FaSpa />, label: 'Yoga Therapy', path: '/yoga-therapy' },
-  { icon: <FaSwimmer />, label: 'Hydro Therapy', path: '/hydro-therapy' },
+  // { icon: <FaSwimmer />, label: 'Hydro Therapy', path: '/hydro-therapy' },
   
   { icon: <FaUsers />, label: 'Group Sessions', path: '/group-sessions' },
   { icon: <FaChalkboardTeacher />, label: 'ADL Training', path: '/adl-training' },
@@ -35,68 +58,53 @@ const services = [
   { icon: <FaHome />, label: 'Daycare Facility', path: '/daycare' }
 ];
 
-// 🎶 Music therapy content
-const musicTherapyContent = {
-  imageSrc:[music1],
-  imageAlt: "Music Therapy Image",
-  title: "Music Therapy at House of Specials",
-  subtitle: "Music transcends barriers and connects us on a profound level.",
-  paragraphs: [
-    "At House of Specials, our music therapy program harnesses the power of sound to improve cognitive, emotional, and social skills.",
-    "Through singing, instrument play, and rhythm-based activities, our trained therapists help individuals develop communication and motor skills while fostering a sense of accomplishment and joy.",
-    "Why choose House of Specials for music therapy?",
-    "• Personalized Approach: Tailored sessions that align with individual preferences and needs.",
-    "• Multidisciplinary Team: Integrated care with other therapeutic programs.",
-    "• Welcoming Atmosphere: A creative and supportive space for exploration and growth.",
-    "• Proven Results: Meaningful progress in communication and emotional well-being.",
-  ],
-  links: {
-    more: "/about",
-  },
-};
-
 import carousel0 from "../assets/carousel0.jpg";
 import carousel1 from "../assets/carousel1.jpg";
 import carousel2 from "../assets/carousel2.jpg";
 import carousel3 from "../assets/carousel3.jpg";
 import carousel4 from "../assets/carousel4.jpg";
 import carousel5 from "../assets/carousel5.jpg";
-import ColoredIcon from '../components/ColoredIcon';
-
-import music1 from "../assets/music1.jpg";
 
 
+import hydro1 from "../assets/hydro1.jpg";
+
+import hydro2 from "../assets/hydro2.jpg";
+
+// This array defines the content for the carousel at the top of the page.
 export const carouselData = [
   {
-    image: carousel3,
-    heading: "Celebrate Strength",
-    text: "Strength grows in the moments when you think you can’t go on but you keep going anyway.",
-    url: "/autism-therapy",
+    image: carousel1,
+    heading: "Every Step Counts",
+    text: "Success is the sum of small efforts, repeated day in and day out. – Robert Collier",
+    url: "/services",
   },
   {
     image: carousel2,
-    heading: "Shine Bright",
-    text: "There is a crack in everything, that’s how the light gets in. – Leonard Cohen",
-    url: "/special-education",
+    heading: "Unleash Potential",
+    text: "Children are not things to be molded, but people to be unfolded. – Jess Lair",
+    url: "/about",
   },
   {
     image: carousel4,
-    heading: "Break Barriers",
-    text: "Don't let what you can't do stop you from doing what you can do. – John Wooden",
-    url: "/sensory-integration",
+    heading: "Possibilities Ahead",
+    text: "Start where you are. Use what you have. Do what you can. – Arthur Ashe",
+    url: "/contact",
   },
 ];
 
-export default function MusicTherapyPage() {
+
+
+// This is the main page component for the Hydrotherapy section.
+export default function HydroTherapyPage() {
   return (
     <div className="bg-gradient-to-br from-purple-100 to-white">
       <Navbar />
       <CustomCarousel slides={carouselData} />
       <div className="min-h-screen w-full bg-gradient-to-br from-purple-100 to-white px-4 py-8">
-        <TherapyInfoSection {...musicTherapyContent} />
+        <TherapyInfoSection {...hydroTherapyContent} />
 
         {/* Services Icons */}
-                <center>
+        <center>
           <h1 className="text-2xl font-bold text-purple-700 mb-6">OUR OTHER SERVICES</h1>
         </center>
         <div className="flex flex-wrap justify-center gap-8 text-purple-700 mb-16">
@@ -115,7 +123,6 @@ export default function MusicTherapyPage() {
             </Link>
           ))}
         </div>
-
 
 
       </div>

@@ -13,6 +13,7 @@ import {
 
 import ColoredIcon from '../components/ColoredIcon';
 
+// This array defines the list of services for the component.
 const services = [
   { icon: <FaChild />, label: 'Autism Therapy', path: '/autism-therapy' },
   { icon: <FaComments />, label: 'Speech Therapy', path: '/speech-therapy' },
@@ -95,7 +96,6 @@ export const carouselData = [
 ];
 
 
-// 📄 Group Classes Page Component
 export default function GroupClassesPage() {
   return (
     <div className="bg-gradient-to-br from-purple-100 to-white">

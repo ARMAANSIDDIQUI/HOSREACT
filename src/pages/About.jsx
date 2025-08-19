@@ -7,7 +7,6 @@ import CustomCarousel from "../components/Carousel";
 import PentagonValues from "../components/PentagonValues";
 import ArcValues from "../components/ArcValues";
 
-// Use same image for content + signature (temporarily)
 import carousel0 from "../assets/carousel0.jpg";
 import carousel1 from "../assets/carousel1.jpg";
 import carousel2 from "../assets/carousel2.jpg";
@@ -17,6 +16,8 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import teamImage from "../assets/team.jpg"; // Replace with real team image
 import logo from "../assets/logo.jpg";
+
+// This array defines the content for the main carousel.
 export const carouselData = [
   {
     image: carousel0,
@@ -39,19 +40,23 @@ export const carouselData = [
 ];
 
 const About = () => {
-
+  // `useLocation` is used to get the current URL, including the hash fragment.
   const location = useLocation();
+
+  // This `useEffect` hook handles scrolling to a specific section of the page
+  // when a hash fragment (like #vision) is present in the URL.
   useEffect(() => {
     if (location.hash) {
       const id = location.hash.replace("#", "");
 
       const element = document.getElementById(id);
       if (element) {
+        // If an element with a matching ID is found, the page smoothly scrolls to it.
         element.scrollIntoView({ behavior: "smooth", block: "start" });
         return;
       }
 
-      // Fallback: match with refs if needed
+      // This section provides a fallback to scroll to the element's ref if a direct ID match is not found.
       if (id === "vision" && visionRef.current) {
         visionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
       }
@@ -64,15 +69,18 @@ const About = () => {
     }
   }, [location]);
 
-
+  // `useRef` is used to create references to the DOM elements for each section (Vision, Mission, Values).
+  // This allows us to programmatically scroll to them.
   const visionRef = useRef(null);
   const missionRef = useRef(null);
   const valuesRef = useRef(null);
 
+  // This function takes a ref and smoothly scrolls the view to that element.
   const scrollToSection = (ref) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   };
 
+  // This object defines the animation variants for elements using `framer-motion`.
   const fadeIn = {
     hidden: { opacity: 0, y: 40 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -152,11 +160,11 @@ const About = () => {
         </div>
 
         {/* VISION */}
-        <div ref={visionRef} id="visionRef" className="flex flex-col lg:flex-row items-center gap-10 mb-20">
+        <div ref={visionRef} id="visionRef" className="flex flex-col lg:flex-row items-center gap-10 mb-20 pl-20 pr-20 md:pl-8 md:pr-8">
           <motion.img
             src={carousel1}
             alt="Vision"
-            className="w-full max-w-md rounded-xl"
+            className=" w-full max-w-md rounded-xl"
             initial="hidden"
             whileInView="visible"
             variants={fadeIn}
@@ -177,7 +185,7 @@ const About = () => {
         </div>
 
         {/* MISSION */}
-        <div id="missionRef" ref={missionRef} className="flex flex-col lg:flex-row-reverse items-center gap-10 mb-20">
+        <div id="missionRef" ref={missionRef} className="flex flex-col lg:flex-row-reverse items-center gap-10 mb-20 pl-20 pr-20 md:pl-8 md:pr-8">
           <motion.img
             src={carousel5}
             alt="Mission"
@@ -219,9 +227,9 @@ const About = () => {
 
             <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-8">
               {/* Pentagon */}
-              <div className="flex-1 min-w-[280px] max-w-[400px] w-full">
+              {/* <div className="flex-1 min-w-[280px] max-w-[400px] w-full">
                 <PentagonValues />
-              </div>
+              </div> */}
 
               {/* Arc */}
 
