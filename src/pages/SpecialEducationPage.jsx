@@ -40,7 +40,7 @@ const services = [
   { icon: <FaRunning />, label: 'Occupational Therapy', path: '/occupational-therapy' },
 
   { icon: <FaFemale />, label: 'Psychological Counseling', path: '/psychological-counselling' },
-  { icon: <FaBook />, label: 'Special Education', path: '/special-education' },
+  // { icon: <FaBook />, label: 'Special Education', path: '/special-education' },
   { icon: <FaMedal />, label: 'Dance Therapy', path: '/dance-therapy' },
   { icon: <FaMusic />, label: 'Music Therapy', path: '/music-therapy' },
   { icon: <FaSpa />, label: 'Yoga Therapy', path: '/yoga-therapy' },
@@ -51,7 +51,7 @@ const services = [
   { icon: <FaUserFriends />, label: 'Parent Training', path: '/parent-training' },
   { icon: <FaSchool />, label: 'Teacher Training', path: '/teacher-training' },
   { icon: <FaUser />, label: 'School Training', path: '/school-training' },
-  //{ icon: <FaHandsHelping />, label: 'Social Skill Training', path: '/social-skill-training' },
+  { icon: <FaHandsHelping />, label: 'Social Skill Training', path: '/social-skill-training' },
   { icon: <FaHeartbeat />, label: 'Physiotherapy', path: '/physio-therapy' },
   { icon: <FaSun />, label: 'Sensory Integration', path: '/sensory-integration' },
   { icon: <FaHome />, label: 'Daycare Facility', path: '/daycare' }

@@ -8,18 +8,18 @@ import TherapyInfoSection from '../components/TherapyInfoCard';
 
 // This object holds the content for the hydrotherapy section.
 const hydroTherapyContent = {
-  imageSrc:[hydro1, hydro2],
-  imageAlt: "Hydrotherapy Image",
-  title: "Hydrotherapy at House of Specials",
-  subtitle: "Water-based therapy offers a unique and effective way to improve physical and sensory functioning.",
+  imageSrc:[music1],
+  imageAlt: "Musictherapy Image",
+  title: "Musictherapy at House of Specials",
+  subtitle: "Music transcends barriers and connects us on a profound level. At House of Specials, our music therapy program harnesses the power of sound to improve cognitive, emotional, and social skills.",
   paragraphs: [
-    "At House of Specials, our hydrotherapy program provides a supportive environment for individuals to build strength, coordination, and confidence.",
-    "Guided by trained therapists, sessions use the properties of water to reduce stress on joints, improve mobility, and enhance sensory integration.",
-    "Why choose House of Specials for hydrotherapy?",
-    "• Personalized Approach: Individualized plans that cater to specific physical and sensory needs.",
-    "• Multidisciplinary Team: Collaboration with physiotherapists and occupational therapists for holistic care.",
-    "• Safe Environment: A controlled and supportive space for therapy.",
-    "• Proven Results: Significant improvements in physical abilities and sensory processing.",
+    "Through singing, instrument play, and rhythm-based activities, our trained therapists help individuals develop communication and motor skills while fostering a sense of accomplishment and joy.",
+    "Through singing, instrument play, and rhythm-based activities, our trained therapists help individuals develop communication and motor skills while fostering a sense of accomplishment and joy.",
+    "Why choose House of Specials for music therapy?",
+    "• Personalized Approach: Tailored sessions that align with individual preferences and needs.",
+    "• Multidisciplinary Team: Integrated care with other therapeutic programs.",
+    "• Welcoming Atmosphere: A creative and supportive space for exploration and growth.",
+    "• Proven Results: Meaningful progress in communication and emotional well-being.",
   ],
   links: {
     more: "/about",
@@ -43,9 +43,9 @@ const services = [
   { icon: <FaFemale />, label: 'Psychological Counseling', path: '/psychological-counselling' },
   { icon: <FaBook />, label: 'Special Education', path: '/special-education' },
   { icon: <FaMedal />, label: 'Dance Therapy', path: '/dance-therapy' },
-  { icon: <FaMusic />, label: 'Music Therapy', path: '/music-therapy' },
+  // { icon: <FaMusic />, label: 'Music Therapy', path: '/music-therapy' },
   { icon: <FaSpa />, label: 'Yoga Therapy', path: '/yoga-therapy' },
-  // { icon: <FaSwimmer />, label: 'Hydro Therapy', path: '/hydro-therapy' },
+  { icon: <FaSwimmer />, label: 'Hydro Therapy', path: '/hydro-therapy' },
   
   { icon: <FaUsers />, label: 'Group Sessions', path: '/group-sessions' },
   { icon: <FaChalkboardTeacher />, label: 'ADL Training', path: '/adl-training' },
@@ -66,9 +66,8 @@ import carousel4 from "../assets/carousel4.jpg";
 import carousel5 from "../assets/carousel5.jpg";
 
 
-import hydro1 from "../assets/hydro1.jpg";
+import music1 from "../assets/music1.jpg";
 
-import hydro2 from "../assets/hydro2.jpg";
 
 // This array defines the content for the carousel at the top of the page.
 export const carouselData = [
@@ -95,7 +94,7 @@ export const carouselData = [
 
 
 // This is the main page component for the Hydrotherapy section.
-export default function HydroTherapyPage() {
+export default function MusicTherapyPage() {
   return (
     <div className="bg-gradient-to-br from-purple-100 to-white">
       <Navbar />

@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "serve-build": "vite preview --port 5000"
   },
   "dependencies": {
     "@alloc/quick-lru": "^5.2.0",

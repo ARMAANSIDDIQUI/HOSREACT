@@ -26,7 +26,7 @@ import SpeechTherapyPage from './pages/SpeechTherapySection';
 import PhysioTherapyPage from './pages/PhysioTherapyPage';
 import DaycarePage from './pages/DayCarePage';
 
-// ✅ ScrollToTop Component
+//ScrollToTop Component
 function ScrollToTop() {
   const { pathname } = useLocation();
 
